@@ -1,0 +1,89 @@
+---
+import Button from "../components/Button.astro";
+
+interface Props {
+  year: string;
+  type: string;
+  category: string;
+  image: string;
+  alt?: string;
+  href?: string;
+  buttonLabel?: string;
+  filterType: string;
+}
+
+const {
+  year,
+  type,
+  category,
+  image,
+  alt = "Aperçu du projet",
+  href = "#",
+  buttonLabel = "Voir le projet",
+  filterType,
+} = Astro.props;
+---
+
+<article class="project-card" data-type={filterType}>
+  <img src={image} alt={alt} class="project-card__image" />
+
+  <div class="project-card__content">
+    <p class="project-card__meta">{type} • {category}</p>
+    <p class="project-card__year">{year}</p>
+
+    <Button title={buttonLabel} link={href} />
+  </div>
+</article>
+
+<style>
+  .project-card {
+    background: #ececdc;
+    border-radius: 5px;
+    padding: 20px 20px 28px;
+    width: 100%;
+    max-width: 385px;
+    box-sizing: border-box;
+    color: #733635;
+    font-family: "Fibra One";
+    font-size: 20px;
+  }
+
+  .project-card__image {
+    width: 345px;
+    height: 210px;
+    display: block;
+    object-fit: cover;
+    margin-bottom: 14px;
+  }
+
+  .project-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-card__meta {
+    margin: 0;
+    font-size: 18px;
+    color: #351e1c;
+  }
+
+  .project-card__year {
+    margin: 0;
+    font-size: 16px;
+    color: #351e1c;
+  }
+
+  .project-card__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 10px 14px;
+    border: 1.5px solid #9b4a46;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #733635;
+    font-size: 18px;
+  }
+</style>

@@ -1,19 +1,41 @@
-<a href="#">Voir mon autre profil</a>
+---
+const { title, type, link } = Astro.props;
+---
+
+<a class:list={["button", type]} href={link}>
+  {title}
+</a>
 
 <style>
-  a {
+  .button {
     display: flex;
-    height: 40px;
     padding: 6px 15px;
+    width: fit-content;
     justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 3px;
-    border: 1px solid var(--brown, #733635);
-    background: var(--beige, #ececdc);
-    color: var(--brown, #733635);
+    border: 1.5px solid #733635;
+    background-color: #ececdc;
+    color: #733635;
     font-family: "Fibra One";
     font-size: 20px;
     list-style: none;
+    text-decoration: none;
+  }
+  .button-fill {
+    background-color: #351e1c;
+    color: #ececdc;
+    border: solid 1.5px #351e1c;
+    border-radius: 8px;
+  }
+
+  .button-fill:hover {
+    background-color: #ececdc;
+    color: #351e1c;
+    border: dashed 1.5px #351e1c;
+  }
+  .button:hover {
+    border: dashed 1.5px #351e1c;
   }
 </style>

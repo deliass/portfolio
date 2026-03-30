@@ -1,0 +1,154 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import CV from "../components/CV.astro";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Nélia Figuerola</title>
+  </head>
+  <body>
+    <Nav />
+    <header>
+      <div class="title">
+        <h1>Me contacter</h1>
+        <img src="/public/assets/icons/contact-h.svg" alt="" />
+      </div>
+      <div class="hero">
+        <p>N’hésitez pas à me contacter si mon profil vous a plu !</p>
+      </div>
+    </header>
+    <main>
+      <div class="bottom-header">
+        <div class="contact-info">
+          <div class="tel">
+            <img
+              src="/public/assets/icons/phone.svg"
+              alt="Téléphone"
+              width="19"
+              height="19"
+            />
+            <a href="tel:+33612345678">+33 6 12 34 56 78</a>
+          </div>
+          <div class="email">
+            <img
+              src="/public/assets/icons/mail.svg"
+              alt="Email"
+              width="19"
+              height="19"
+            />
+            <a href="mailto:nelia@tuta.io">nelia@tuta.io</a>
+          </div>
+        </div>
+        <img src="/public/assets/icons/contact-header.svg" alt="" />
+      </div>
+    </main>
+    <CV />
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    background: #f5f4ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    align-items: stretch;
+    gap: 80px;
+  }
+
+  main {
+    display: flex;
+    padding: 0px 120px;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .hero {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  header {
+    display: flex;
+    width: fit-content;
+    padding: 0px 120px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  h1 {
+    color: #733635;
+    font-family: Monotalic;
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    color: #733635;
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 44px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    color: #733635;
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 35px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  p {
+    color: #351e1c;
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .tel a,
+  .email a {
+    color: #351e1c;
+    font-family: "Fibra One";
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .tel,
+  .email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .bottom-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
