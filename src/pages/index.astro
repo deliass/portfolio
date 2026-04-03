@@ -26,7 +26,12 @@ import Contact from "../components/Contact.astro";
       />
       <section class="hero">
         <div class="left-side">
-          <img src="/assets/icons/nelia-avatar.svg" alt="" width="350" height="390" />
+          <img
+            src="/assets/icons/nelia-avatar.svg"
+            alt=""
+            width="350"
+            height="390"
+          />
         </div>
 
         <div class="right-side">
@@ -55,8 +60,13 @@ import Contact from "../components/Contact.astro";
           veille et mes inspirations, jusqu’aux projets concrets et aboutis.
         </p>
         <div class="welcome__assets">
-          <Button title="Découvrir mes projets" />
-          <img src="/public/assets/icons/welcome.svg" alt="" width="78" height="68" />
+          <Button title="Découvrir mes projets" link="/mes-projets/" />
+          <img
+            src="/public/assets/icons/welcome.svg"
+            alt=""
+            width="78"
+            height="68"
+          />
         </div>
       </div>
     </section>
@@ -92,7 +102,7 @@ import Contact from "../components/Contact.astro";
             </p>
           </div>
         </div>
-        <Button title="Voir mes inspirations" />
+        <Button title="Voir mes inspirations" link="/wip/" />
       </section>
       <Contact />
     </main>

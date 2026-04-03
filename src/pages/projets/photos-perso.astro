@@ -1,0 +1,199 @@
+---
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Back from "../../components/Back.astro";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Nélia Figuerola</title>
+  </head>
+  <body>
+    <Nav />
+    <header>
+      <Back />
+      <h1>Photos urbaines</h1>
+      <div class="hero">
+        <img
+          src="/public/assets/images/projects/photos-perso/st-jacques.jpg"
+          alt=""
+        />
+      </div>
+    </header>
+    <section class="def">
+      <div class="def__inner">
+        <p>Photos prises avec mon Canon EOS 500 Digital.</p>
+      </div>
+    </section>
+    <main>
+      <section class="contexte">
+        <h2>Contexte</h2>
+        <p>
+          J'aime bien faire de la photos, j'en fais autant pour mon plaisir
+          personnel, que pour des amis, quand il s'agit de leurs projets pro.
+        </p>
+      </section>
+      <section class="productions">
+        <h2>Productions</h2>
+        <p>Voici les photos que j'ai prises :</p>
+        <div class="photos">
+          <img
+            src="/public/assets/images/projects/photos-perso/perpi1.jpg"
+            alt=""
+          />
+          <img
+            src="/public/assets/images/projects/photos-perso/perpi2.jpg"
+            alt=""
+          />
+          <img
+            src="/public/assets/images/projects/photos-perso/perpi3.jpg"
+            alt=""
+          />
+          <img
+            src="/public/assets/images/projects/photos-perso/perpi4.jpg"
+            alt=""
+          />
+          <img
+            src="/public/assets/images/projects/photos-perso/maxime.jpg"
+            alt=""
+          />
+          <img
+            src="/public/assets/images/projects/photos-perso/mns2.jpg"
+            alt=""
+          />
+          <img
+            src="/public/assets/images/projects/photos-perso/toulouse1.jpg"
+            alt=""
+          />
+          <img
+            src="/public/assets/images/projects/photos-perso/toulouse2.jpg"
+            alt=""
+          />
+          <img
+            src="/public/assets/images/projects/photos-perso/mns1.jpg"
+            alt=""
+          />
+        </div>
+      </section>
+    </main>
+  </body>
+  <Footer />
+</html>
+
+<style>
+  body {
+    background: #f5f4ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    align-items: stretch;
+    gap: 80px;
+  }
+
+  header {
+    display: flex;
+    padding: 0px 120px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  h1 {
+    color: #733635;
+    font-family: Monotalic;
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    color: #733635;
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 44px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    color: #733635;
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 35px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  p {
+    color: #351e1c;
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  a {
+    color: #351e1c;
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  main {
+    display: flex;
+    padding: 0px 120px;
+    width: fit-content;
+    margin: 0 auto;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 80px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    align-self: center;
+    gap: 20px;
+  }
+
+  .photos img {
+    width: 100%;
+  }
+
+  .contexte,
+  .productions {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .def {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #ececdc;
+  }
+
+  .def__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding: 60px 120px;
+    box-sizing: border-box;
+  }
+</style>

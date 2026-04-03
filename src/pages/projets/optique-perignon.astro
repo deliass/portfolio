@@ -1,0 +1,198 @@
+---
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Back from "../../components/Back.astro";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Nélia Figuerola</title>
+  </head>
+  <body>
+    <Nav />
+    <header>
+      <Back />
+      <h1>Projet pour *Lunetterie Pérignon</h1>
+      <div class="hero">
+        <img
+          src="/public/assets/images/projects/perignon/logo-perignon.png"
+          alt=""
+          height="80"
+          width="200"
+        />
+      </div>
+    </header>
+    <section class="def">
+      <div class="def__inner">
+        <p>
+          <b>*Lunetterie Pérignon :</b>
+          <br />Marion et Jean-Philippe ont créé leur boutique il y a quelques
+          années et ont fait appel aux étudiants de mon école pour plusieurs
+          sujets, dont la création de contenus pour leurs réseaux sociaux.
+        </p>
+      </div>
+    </section>
+    <main>
+      <section class="contexte">
+        <h2>Contexte</h2>
+        <p>
+          Nous devions réaliser une vidéo promotionnelle pour leur boutique.
+          Nous nous sommes alignés avec leurs valeurs et motivations, et avons
+          décidés de faire une pub avec un ton humoristique et décalé, afin de
+          mettre en avant leurs produits.
+        </p>
+      </section>
+      <section class="skills">
+        <h2>Compétences</h2>
+        <p>
+          Ici, j'ai beaucoup travaillé sur la partie de pré-production, mais
+          aussi post production avec le montage de la vidéo sur Première Pro.
+        </p>
+      </section>
+      <section class="productions">
+        <h2>La production</h2>
+        <p>
+          Je vous invite à consulter la présentation finale, pour découvrir
+          notre argumentation et la vidéo :
+        </p>
+        <div
+          style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;"
+        >
+          <iframe
+            loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https://www.canva.com/design/DAG1q-pejLI/pqMinMASNIbCjTtBg5kLvg/view?embed"
+            allowfullscreen="allowfullscreen"
+            allow="fullscreen"
+          >
+          </iframe>
+        </div>
+        <a
+          href="https://www.canva.com/design/DAG1q-pejLI/pqMinMASNIbCjTtBg5kLvg/view?utm_content=DAG1q-pejLI&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+          target="_blank"
+          rel="noopener"></a>
+      </section>
+    </main>
+  </body>
+  <Footer />
+</html>
+
+<style>
+  body {
+    background: #f5f4ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    align-items: stretch;
+    gap: 80px;
+  }
+
+  header {
+    display: flex;
+    padding: 0px 120px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  h1 {
+    color: #733635;
+    font-family: Monotalic;
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    color: #733635;
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 44px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    color: #733635;
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 35px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  p {
+    color: #351e1c;
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  a {
+    color: #351e1c;
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  main {
+    display: flex;
+    padding: 0px 120px;
+    width: fit-content;
+    margin: 0 auto;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 80px;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .photos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .photo-bottom {
+    width: 100%;
+    height: auto;
+  }
+
+  .contexte,
+  .skills,
+  .productions {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .def {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #ececdc;
+  }
+
+  .def__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding: 60px 120px;
+    box-sizing: border-box;
+  }
+</style>
