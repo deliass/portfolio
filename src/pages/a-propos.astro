@@ -12,6 +12,8 @@ import Contact from "../components/Contact.astro";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/style/fonts.css" />
+    <link rel="stylesheet" href="/src/style/variables.css" />
     <title>Nélia Figuerola</title>
   </head>
   <body>
@@ -143,7 +145,7 @@ import Contact from "../components/Contact.astro";
 
 <style>
   body {
-    background: #f5f4ed;
+    background: var(--primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,15 +182,15 @@ import Contact from "../components/Contact.astro";
   }
 
   h1 {
-    color: #733635;
-    font-family: Monotalic;
+    color: var(--title);
+    font-family: "Monotalic";
     font-size: 55px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
 
   h2 {
-    color: #733635;
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 44px;
     margin-top: 0px;
@@ -196,14 +198,14 @@ import Contact from "../components/Contact.astro";
   }
 
   h3 {
-    color: #733635;
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 35px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
   p {
-    color: #351e1c;
+    color: var(--text-primary);
     font-family: "Fibra One";
     font-size: 20px;
     margin-top: 0px;
@@ -211,7 +213,7 @@ import Contact from "../components/Contact.astro";
   }
 
   li {
-    color: #351e1c;
+    color: var(--text-primary);
     font-family: "Fibra One";
     font-size: 20px;
     margin-top: 0px;
@@ -247,7 +249,7 @@ import Contact from "../components/Contact.astro";
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: #ececdc;
+    background: var(--secondary);
     gap: 30px;
   }
 

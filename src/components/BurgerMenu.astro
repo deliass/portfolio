@@ -55,22 +55,22 @@ import Button from "./Button.astro";
 
       width: 60px;
       height: 60px;
-      border: 1.5px solid #351e1c;
+      border: 1.5px solid var(--text-primary);
       border-radius: 999px;
-      background-color: #ececdc;
+      background-color: var(--secondary);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 6px;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 8px 20px var(--text-primary);
     }
 
     .burger-toggle span {
       width: 24px;
       height: 2px;
-      background-color: #351e1c;
+      background-color: var(--text-primary);
       display: block;
     }
 
@@ -82,9 +82,9 @@ import Button from "./Button.astro";
 
       min-width: 220px;
       padding: 20px;
-      border: 1.5px solid #733635;
+      border: 1.5px solid var(--title);
       border-radius: 16px;
-      background-color: #f5f4ed;
+      background-color: var(--primary);
 
       display: flex;
       flex-direction: column;
@@ -104,7 +104,7 @@ import Button from "./Button.astro";
 
     .burger-panel a {
       text-decoration: none;
-      color: #351e1c;
+      color: var(--text-primary);
       font-family: "Fibra One";
       font-size: 20px;
     }

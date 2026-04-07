@@ -11,6 +11,8 @@ import CV from "../components/CV.astro";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/style/fonts.css" />
+    <link rel="stylesheet" href="/src/style/variables.css" />
     <title>Nélia Figuerola</title>
   </head>
   <body>
@@ -56,7 +58,7 @@ import CV from "../components/CV.astro";
 
 <style>
   body {
-    background: #f5f4ed;
+    background: var(--primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,15 +95,15 @@ import CV from "../components/CV.astro";
   }
 
   h1 {
-    color: #733635;
-    font-family: Monotalic;
+    color: var(--title);
+    font-family: "Monotalic";
     font-size: 55px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
 
   h2 {
-    color: #733635;
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 44px;
     margin-top: 0px;
@@ -109,7 +111,7 @@ import CV from "../components/CV.astro";
   }
 
   h3 {
-    color: #733635;
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 35px;
     margin-top: 0px;
@@ -117,7 +119,7 @@ import CV from "../components/CV.astro";
   }
 
   p {
-    color: #351e1c;
+    color: var(--text-primary);
     font-family: "Fibra One";
     font-size: 20px;
     margin-top: 0px;
@@ -126,7 +128,7 @@ import CV from "../components/CV.astro";
 
   .tel a,
   .email a {
-    color: #351e1c;
+    color: var(--text-primary);
     font-family: "Fibra One";
     font-size: 20px;
     text-decoration: none;

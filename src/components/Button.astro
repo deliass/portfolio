@@ -19,27 +19,27 @@ const { title, type, link, pdfUrl } = Astro.props;
     align-items: center;
     gap: 10px;
     border-radius: 3px;
-    border: 1.5px solid #733635;
-    background-color: #ececdc;
-    color: #733635;
+    border: 1.5px solid var(--title);
+    background-color: var(--secondary);
+    color: var(--title);
     font-family: "Fibra One";
     font-size: 20px;
     list-style: none;
     text-decoration: none;
   }
   .button-fill {
-    background-color: #351e1c;
-    color: #ececdc;
-    border: solid 1.5px #351e1c;
+    background-color: var(--text-primary);
+    color: var(--secondary);
+    border: solid 1.5px var(--text-primary);
     border-radius: 8px;
   }
 
   .button-fill:hover {
-    background-color: #ececdc;
-    color: #351e1c;
-    border: dashed 1.5px #351e1c;
+    background-color: var(--secondary);
+    color: var(--text-primary);
+    border: dashed 1.5px var(--text-primary);
   }
   .button:hover {
-    border: dashed 1.5px #351e1c;
+    border: dashed 1.5px var(--text-primary);
   }
 </style>

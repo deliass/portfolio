@@ -13,6 +13,8 @@ import ProjectCard from "../components/ProjectCard.astro";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/style/fonts.css" />
+    <link rel="stylesheet" href="/src/style/variables.css" />
     <title>Nélia Figuerola</title>
   </head>
   <body>
@@ -232,7 +234,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 <style>
   body {
-    background: #f5f4ed;
+    background: var(--primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -262,15 +264,15 @@ import ProjectCard from "../components/ProjectCard.astro";
   }
 
   h1 {
-    color: #733635;
-    font-family: Monotalic;
+    color: var(--title);
+    font-family: "Monotalic";
     font-size: 55px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
 
   h2 {
-    color: #733635;
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 44px;
     margin-top: 0px;
@@ -278,7 +280,7 @@ import ProjectCard from "../components/ProjectCard.astro";
   }
 
   h3 {
-    color: #733635;
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 35px;
     margin-top: 0px;
@@ -286,7 +288,7 @@ import ProjectCard from "../components/ProjectCard.astro";
   }
 
   p {
-    color: #351e1c;
+    color: var(--text-primary);
     font-family: "Fibra One";
     font-size: 20px;
     margin-top: 0px;
@@ -294,7 +296,7 @@ import ProjectCard from "../components/ProjectCard.astro";
   }
 
   li {
-    color: #351e1c;
+    color: var(--text-primary);
     font-family: "Fibra One";
     font-size: 20px;
     margin-top: 0px;
@@ -334,7 +336,7 @@ import ProjectCard from "../components/ProjectCard.astro";
   .category-filter {
     display: flex;
     flex-direction: column;
-    background-color: #ececdc;
+    background-color: var(--primary);
     border-radius: 5px;
     gap: 30px;
     padding: 60px 20px;

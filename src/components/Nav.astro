@@ -13,7 +13,7 @@ import Button from "./Button.astro";
 <style>
   nav {
     border-radius: 20px;
-    background: var(--beige, #ececdc);
+    background: var(--secondary);
     display: flex;
     width: fit-content;
     flex-direction: row;
@@ -30,7 +30,7 @@ import Button from "./Button.astro";
     box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
   }
   a {
-    color: #733635;
+    color: var(--title);
     text-decoration: none;
     font-family: "Fibra One";
     font-size: 20px;
@@ -46,9 +46,9 @@ import Button from "./Button.astro";
     align-items: center;
     gap: 10px;
     border-radius: 8px;
-    border: 2px solid #ececdc;
-    background: #351e1c;
-    color: white;
+    border: 2px solid var(--secondary);
+    background: var(--text-primary);
+    color: var(--primary);
   }
   /* Hide on mobile */
   @media (max-width: 768px) {

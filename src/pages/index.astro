@@ -13,6 +13,9 @@ import BurgerMenu from "../components/BurgerMenu.astro";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="https://use.typekit.net/cwl4czb.css" />
+    <link rel="stylesheet" href="/src/style/fonts.css" />
+    <link rel="stylesheet" href="/src/style/variables.css" />
     <title>Nélia Figuerola</title>
   </head>
   <body>
@@ -114,7 +117,7 @@ import BurgerMenu from "../components/BurgerMenu.astro";
 
 <style>
   body {
-    background: #f5f4ed;
+    background: var(--primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,14 +154,15 @@ import BurgerMenu from "../components/BurgerMenu.astro";
     align-self: flex-end;
   }
   h1 {
-    color: #733635;
-    font-family: Monotalic;
+    color: var(--title);
+    font-family: "monotalic";
     font-size: 55px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
+
   h2 {
-    color: #733635;
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 44px;
     margin-top: 0px;
@@ -166,22 +170,15 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   }
 
   h3 {
-    color: #733635;
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 35px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  header p {
-    color: #733635;
-    font-family: "Fibra One";
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
+
   p {
-    color: #351e1c;
+    color: var(--text-primary);
     font-family: "Fibra One";
     font-size: 20px;
     margin-top: 0px;
@@ -215,7 +212,7 @@ import BurgerMenu from "../components/BurgerMenu.astro";
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: #ececdc;
+    background: var(--secondary);
   }
   .welcome__inner {
     display: flex;
@@ -261,7 +258,7 @@ import BurgerMenu from "../components/BurgerMenu.astro";
   .veille {
     display: flex;
     flex-direction: column;
-    background-color: #ececdc;
+    background-color: var(--secondary);
     gap: 20px;
     justify-content: space-between;
     padding: 30px;
