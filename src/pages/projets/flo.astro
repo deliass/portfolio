@@ -1,0 +1,221 @@
+---
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Back from "../../components/Back.astro";
+import Button from "../../components/Button.astro";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/style/fonts.css" />
+    <link rel="stylesheet" href="/src/style/variables.css" />
+    <title>Nélia Figuerola</title>
+  </head>
+  <body>
+    <Nav />
+    <header>
+      <Back />
+      <h1>Design d'étiquettes</h1>
+      <div class="hero">
+        <img
+          src="/public/assets/images/projects/flow/carte.jpg"
+          alt=""
+          width="129"
+          height="200"
+        />
+        <img
+          src="/public/assets/images/projects/flow/flo.jpg"
+          alt=""
+          width="266"
+          height="200"
+        />
+      </div>
+    </header>
+    <section class="def">
+      <div class="def__inner">
+        <p>
+          Ma tante est cheffe privée, depuis petite, je l'aide à faire ses
+          chutneys, en été, pour vendre à des restaurants proches de là où je
+          viens (66). Avec les années, je ne peux plus être avec elle, mais elle
+          compte désormais sur moi pour réaliser les étiquettes de ses pots !
+        </p>
+        <a href="https://flomercier.com/">Le site de ma tante</a>
+      </div>
+    </section>
+    <main>
+      <section class="skills">
+        <h2>Compétences</h2>
+        <p>
+          Ici, j'ai utilisé Illustrator pour créer les étiquettes. Sur la partie
+          DA, ma tante est plutôt stricte. Ses chutneys existaient déjà avant ma
+          naissance, donc les visuels ne sont pas (trop) discutables ! Mais
+          c'est avec plaisir qu'on s'échange nos points de vue et conseils lors
+          des créations.
+        </p>
+      </section>
+      <section class="productions">
+        <h2>Les étiquettes</h2>
+        <div class="productions__inner">
+          <img
+            src="/public/assets/images/projects/flow/1.jpg"
+            alt=""
+            width="200"
+          />
+          <img
+            src="/public/assets/images/projects/flow/2.jpg"
+            alt=""
+            width="200"
+          />
+          <img
+            src="/public/assets/images/projects/flow/3.jpg"
+            alt=""
+            width="200"
+          />
+          <img
+            src="/public/assets/images/projects/flow/4.jpg"
+            alt=""
+            width="200"
+          />
+        </div>
+      </section>
+    </main>
+  </body>
+  <Footer />
+</html>
+
+<style>
+  body {
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    align-items: stretch;
+    gap: 80px;
+  }
+
+  header {
+    display: flex;
+    padding: 0px 120px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  h1 {
+    color: var(--title);
+    font-family: "Monotalic";
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    color: var(--title);
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 44px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    color: var(--title);
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 35px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  p {
+    color: var(--text-primary);
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  a {
+    color: var(--text-primary);
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  main {
+    display: flex;
+    padding: 0px 120px;
+    width: fit-content;
+    margin: 0 auto;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 80px;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .photos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .photo-bottom {
+    width: 100%;
+    height: auto;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .productions {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .presentation {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .productions__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-self: center;
+  }
+
+  .def {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--secondary);
+  }
+
+  .def__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding: 60px 120px;
+    box-sizing: border-box;
+  }
+</style>

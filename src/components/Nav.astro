@@ -1,52 +1,59 @@
 ---
-
+import Button from "./Button.astro";
 ---
 
 <nav>
   <a href="/">Accueil</a>
-  <a href="/a-propos/">À propos</a>
+  <a href="/a-propos">À propos</a>
   <a href="/mes-projets">Mes projets</a>
-  <a href="/inspirations">Inspirations</a>
-  <a class="contact" href="/contact/">Contact</a>
+  <a href="/wip">Inspirations</a>
+  <Button title="Contact" type="button-fill" link="/contact/" />
 </nav>
 
 <style>
   nav {
     border-radius: 20px;
-    background: var(--beige, #ececdc);
+    background: var(--secondary);
     display: flex;
     width: fit-content;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 30px;
+    padding: 0 30px;
+    height: 80px;
     margin: 0 auto;
     gap: 60px;
     list-style: none;
     position: sticky;
     top: 20px;
     z-index: 100;
-    a {
-      color: var(--black, #000);
-      text-decoration: none;
-      font-family: "Fibra One";
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-    }
-
-    .contact {
-      display: flex;
-      height: 40px;
-      padding: 6px 15px;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border-radius: 8px;
-      border: 2px solid var(--beige, #ececdc);
-      background: var(--black, #351e1c);
-      color: white;
+    box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+  }
+  a {
+    color: var(--title);
+    text-decoration: none;
+    font-family: "Fibra One";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .contact {
+    display: flex;
+    height: 40px;
+    padding: 6px 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 2px solid var(--secondary);
+    background: var(--text-primary);
+    color: var(--primary);
+  }
+  /* Hide on mobile */
+  @media (max-width: 768px) {
+    nav {
+      display: none;
     }
   }
 </style>

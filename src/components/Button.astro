@@ -1,19 +1,45 @@
-<a href="#">Voir mon autre profil</a>
+---
+const { title, type, link, pdfUrl } = Astro.props;
+---
+
+<a
+  class:list={["button", type]}
+  href={pdfUrl || link}
+  download={pdfUrl ? true : undefined}
+>
+  {title}
+</a>
 
 <style>
-  a {
+  .button {
     display: flex;
-    height: 40px;
     padding: 6px 15px;
+    width: fit-content;
     justify-content: center;
     align-items: center;
     gap: 10px;
     border-radius: 3px;
-    border: 1px solid var(--brown, #733635);
-    background: var(--beige, #ececdc);
-    color: var(--brown, #733635);
+    border: 1.5px solid var(--title);
+    background-color: var(--secondary);
+    color: var(--title);
     font-family: "Fibra One";
     font-size: 20px;
     list-style: none;
+    text-decoration: none;
+  }
+  .button-fill {
+    background-color: var(--text-primary);
+    color: var(--secondary);
+    border: solid 1.5px var(--text-primary);
+    border-radius: 8px;
+  }
+
+  .button-fill:hover {
+    background-color: var(--secondary);
+    color: var(--text-primary);
+    border: dashed 1.5px var(--text-primary);
+  }
+  .button:hover {
+    border: dashed 1.5px var(--text-primary);
   }
 </style>

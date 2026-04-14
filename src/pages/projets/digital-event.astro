@@ -1,0 +1,210 @@
+---
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import Back from "../../components/Back.astro";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/style/fonts.css" />
+    <link rel="stylesheet" href="/src/style/variables.css" />
+    <title>Nélia Figuerola</title>
+  </head>
+  <body>
+    <Nav />
+    <header>
+      <Back />
+      <h1>Projet photo *Digital Event 2026</h1>
+      <div class="hero">
+        <img
+          src="/public/assets/images/projects/digital-event/digital-event.png"
+          alt=""
+        />
+        <div class="photos">
+          <img
+            src="/public/assets/images/projects/digital-event/photo3.jpg"
+            alt=""
+            class="photo-bottom"
+          />
+          <img
+            src="/public/assets/images/projects/digital-event/photo2.jpg"
+            alt=""
+            class="photo-bottom"
+          />
+        </div>
+      </div>
+    </header>
+    <section class="def">
+      <div class="def__inner">
+        <p>
+          <b>*Digital Event :</b><br />Événement phare de l’ESD, ce projet de 2
+          semaines réunit chaque année les étudiants de l’école répartis dans
+          différents ateliers pour imaginer et concevoir des dispositifs
+          interactifs.
+        </p>
+        <a href="https://ecole-du-digital.com/lecole/le-digital-event/"
+          >En lire plus sur le site de mon école</a
+        >
+      </div>
+    </section>
+    <main>
+      <section class="contexte">
+        <h2>Contexte</h2>
+        <p>
+          Cette année, l’évènement nous demandait d’exercer sur la thématique du
+          cinéma. Je ne peux pas dire que je suis une cinéphile, certes, mais je
+          ne peux que conseiller de regarder <a
+            href="https://fr.wikipedia.org/wiki/Midsommar_(film)">Midsommar</a
+          > ! <br />
+          Ce film est, à mes yeux, un chef d’œuvre artistique, une nouvelle manière
+          d’aborder l’horreur, dans des couleurs plus gaies, en plein jour, avec des
+          personnes qui ont l’air si attachante, avec une atmosphère si détendue...
+          Alors, il était pour moi évident de photographier sur ce film, et surtout,
+          sur ma scène préférée. <br />
+          Pour m’aider à justifier mon choix, nous avions décidé de photographier
+          des scènes de films, existantes ou non. Nos scènes devaient représenter
+          le doute. Que ce soit lors de la réflexion, lors de la prise de décision,
+          ou bien après la décision/l’acte.
+        </p>
+      </section>
+      <section class="skills">
+        <h2>Compétences</h2>
+        <p>
+          J’ai eu l’occasion de m’essayer sur Adobe Lightroom Classic, que j’ai
+          trouvé extrêmement intuitif. Mais pour parler plus technique, j’ai pu
+          aussi redécouvrir le réglage photo, la mise en place de lumières, la
+          construction de mon décor de photo, mais aussi la scénographie de
+          notre atelier, à l’école.
+        </p>
+      </section>
+      <section class="also">
+        <h2>J'apparais aussi ici...</h2>
+        <img
+          src="/public/assets/images/projects/digital-event/photo4.jpg"
+          alt=""
+          class="photo-bottom"
+        />
+        <p>Inspirée de Pearl et Maxxxine, photo prise par @noharrttt_ .</p>
+      </section>
+    </main>
+  </body>
+  <Footer />
+</html>
+
+<style>
+  body {
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    align-items: stretch;
+    gap: 80px;
+  }
+
+  header {
+    display: flex;
+    padding: 0px 120px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  h1 {
+    color: var(--title);
+    font-family: "Monotalic";
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    color: var(--title);
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 44px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  h3 {
+    color: var(--title);
+    font-family: "ABC Favorit Mono Edu";
+    font-size: 35px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  p {
+    color: var(--text-primary);
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  a {
+    color: var(--text-primary);
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  main {
+    display: flex;
+    padding: 0px 120px;
+    width: fit-content;
+    margin: 0 auto;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 80px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .photos {
+    display: flex;
+    gap: 20px;
+  }
+
+  .photo-bottom {
+    width: calc(50% - 10px);
+    height: auto;
+    display: block;
+  }
+
+  .contexte,
+  .skills,
+  .also {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .def {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--secondary);
+  }
+
+  .def__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding: 60px 120px;
+    box-sizing: border-box;
+  }
+</style>

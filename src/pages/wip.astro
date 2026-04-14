@@ -1,0 +1,67 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/style/fonts.css" />
+    <link rel="stylesheet" href="/src/style/variables.css" />
+    <title>Nélia Figuerola</title>
+  </head>
+  <body>
+    <Nav />
+    <header>
+      <h1>Page en construction</h1>
+      <p>
+        Cette page est actuellement en construction, elle sera bientôt
+        disponible !
+      </p>
+    </header>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body {
+    background: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px 30px 0px;
+    align-items: stretch;
+    gap: 80px;
+  }
+
+  header {
+    display: flex;
+    width: fit-content;
+    padding: 0px 120px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  h1 {
+    color: var(--title);
+    font-family: "Monotalic";
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  p {
+    color: var(--text-primary);
+    font-family: "Fibra One";
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+</style>

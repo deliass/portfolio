@@ -36,21 +36,18 @@ const username = "withastro";
 
 <style>
   footer {
-    display: grid;
+    display: flex;
+    justify-content: space-around;
     padding: 60px 120px;
-    row-gap: 40px;
-    column-gap: 80px;
-    align-self: stretch;
-    grid-template-rows: repeat(1, fit-content(100%));
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
     flex-direction: row;
     flex-wrap: wrap;
     border-radius: 30px;
-    background: var(--beige, #ececdc);
+    background: var(--secondary);
   }
 
   h3 {
-    color: var(--brown, #733635);
+    color: var(--title);
     font-family: "ABC Favorit Mono Edu";
     font-size: 25px;
     margin-top: 0px;
@@ -58,18 +55,21 @@ const username = "withastro";
   }
 
   a {
-    color: var(--black, #000);
+    color: var(--text-primary);
     font-family: "Fibra One";
     font-size: 20px;
-    font-weight: semi-bold;
+    font-weight: bold;
     text-decoration: none;
   }
 
   .plan,
   .contact,
   .mentions {
+    padding-right: 20px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
     row-gap: 20px;
   }
 
@@ -77,7 +77,10 @@ const username = "withastro";
   .contact ul {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     row-gap: 10px;
     list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 </style>
