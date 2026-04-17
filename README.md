@@ -41,3 +41,13 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## A faire
+
+- Arranger TOUT le contenu des pages dans la balise `<main>`, excepté la navbar et le footer.
+- Ajouter margin-top à toutes les pages en format desktop pour la navbar.
+- Pour la page d'accueil, appliquer la "max-width:" à chaque section plutôt qu'au `</main>` pour pouvoir avoir une section qui prend toute la largeur.
+
+## À noter :
+- Pas de section dans d'autres sections.
+- 

@@ -23,18 +23,6 @@ import Footer from "../../components/Footer.astro";
           src="/public/assets/images/projects/digital-event/digital-event.png"
           alt=""
         />
-        <div class="photos">
-          <img
-            src="/public/assets/images/projects/digital-event/photo3.jpg"
-            alt=""
-            class="photo-bottom"
-          />
-          <img
-            src="/public/assets/images/projects/digital-event/photo2.jpg"
-            alt=""
-            class="photo-bottom"
-          />
-        </div>
       </div>
     </header>
     <section class="def">
@@ -45,7 +33,7 @@ import Footer from "../../components/Footer.astro";
           différents ateliers pour imaginer et concevoir des dispositifs
           interactifs.
         </p>
-        <a href="https://ecole-du-digital.com/lecole/le-digital-event/"
+        <a href="https://ecole-du-digital.com/lecole/le-digital-event/" target="_blank"
           >En lire plus sur le site de mon école</a
         >
       </div>
@@ -109,9 +97,6 @@ import Footer from "../../components/Footer.astro";
     width: 100%;
     padding: 0 var(--space-s-m);
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
     gap: var(--space-s);
   }
 
@@ -173,13 +158,10 @@ import Footer from "../../components/Footer.astro";
   .photos {
     display: flex;
     width: 100%;
-    gap: var(--space-2xs);
   }
 
   .photo-bottom {
-    width: calc(50% - 10px);
-    height: auto;
-    display: block;
+    width: 100%;
   }
 
   .contexte,
