@@ -4,6 +4,7 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Contact from "../components/Contact.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
 
 <html lang="fr">
@@ -19,19 +20,23 @@ import ProjectCard from "../components/ProjectCard.astro";
   </head>
   <body>
     <Nav />
-    <header>
-      <div class="title">
-        <h1>Mes projets</h1>
-        <img src="/public/assets/icons/project-h.svg" alt="" />
-      </div>
-      <div class="hero">
-        <p>
-          Ici, vous pourrez voir mes réalisations professionnelles, personnelles
-          et scolaires.
-        </p>
-      </div>
-    </header>
     <main>
+      <Breadcrumbs
+        items={[{ href: "/", label: "Accueil" }]}
+        current="Mes projets"
+      />
+      <header>
+        <div class="title">
+          <h1>Mes projets</h1>
+          <img src="/public/assets/icons/project-h.svg" alt="" />
+        </div>
+        <div class="hero">
+          <p>
+            Ici, vous pourrez voir mes réalisations professionnelles,
+            personnelles et scolaires.
+          </p>
+        </div>
+      </header>
       <section class="projects">
         <div class="categories">
           <div class="category-filter">
@@ -245,10 +250,8 @@ import ProjectCard from "../components/ProjectCard.astro";
   .hero {
     display: flex;
     width: fit-content;
-    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
   }
   header {
     display: flex;
@@ -308,12 +311,10 @@ import ProjectCard from "../components/ProjectCard.astro";
 
   main {
     display: flex;
-    flex-wrap: wrap;
     max-width: 1200px;
     flex-direction: column;
-    align-self: stretch;
     gap: var(--space-2xl);
-    box-sizing: border-box;
+    margin-top: 150px;
   }
 
   .categories ul {
@@ -321,9 +322,6 @@ import ProjectCard from "../components/ProjectCard.astro";
     flex-direction: column;
     row-gap: 10px;
     list-style-type: none;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
   }
 
   .categories {
@@ -333,7 +331,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     gap: 40px;
     position: sticky;
     height: fit-content;
-    top: 180px;
+    top: 150px;
   }
 
   .category-filter {
@@ -374,14 +372,24 @@ import ProjectCard from "../components/ProjectCard.astro";
     align-items: start;
   }
 
+  .gallery a {
+    display: block;
+  }
+
   @media (max-width: 480px) {
     * img {
       display: none;
     }
+
+    main {
+      margin-top: 0;
+    }
+
     .projects {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+      padding: 0 10px;
       gap: var(--space-s);
     }
 
@@ -399,6 +407,7 @@ import ProjectCard from "../components/ProjectCard.astro";
     .categories ul {
       display: flex;
       flex-direction: row;
+      gap: 10px;
       flex-wrap: wrap;
     }
 

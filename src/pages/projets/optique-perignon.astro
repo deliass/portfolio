@@ -1,6 +1,7 @@
 ---
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 ---
 
 <html lang="fr">
@@ -16,30 +17,37 @@ import Footer from "../../components/Footer.astro";
   </head>
   <body>
     <Nav />
-    <header>
-      <h1>Projet pour *Lunetterie Pérignon</h1>
-      <div class="hero">
-        <img
-          src="/public/assets/images/projects/perignon/logo-perignon.png"
-          alt=""
-          height="80"
-          width="200"
-        />
-      </div>
-    </header>
-    <section class="def">
-      <div class="def__inner">
-        <p>
-          <b>*Lunetterie Pérignon :</b>
-          <br />Marion et Jean-Philippe ont créé leur boutique il y a quelques
-          années et ont fait appel aux étudiants de mon école pour plusieurs
-          sujets, dont la création de contenus pour leurs réseaux sociaux.
-        </p>
-      </div>
-    </section>
     <main>
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Accueil" },
+          { href: "/mes-projets", label: "Mes projets" },
+        ]}
+        current="Lunetterie Pérignon"
+      />
+      <header>
+        <h1 class="project-title">Projet pour *Lunetterie Pérignon</h1>
+        <div class="hero">
+          <img
+            src="/public/assets/images/projects/perignon/logo-perignon.png"
+            alt=""
+            height="80"
+            width="200"
+          />
+        </div>
+      </header>
+      <section class="def">
+        <div class="def__inner">
+          <p>
+            <b>*Lunetterie Pérignon :</b>
+            <br />Marion et Jean-Philippe ont créé leur boutique il y a quelques
+            années et ont fait appel aux étudiants de mon école pour plusieurs
+            sujets, dont la création de contenus pour leurs réseaux sociaux.
+          </p>
+        </div>
+      </section>
       <section class="contexte">
-        <h2>Contexte</h2>
+        <h2 class="project-heading">Contexte</h2>
         <p>
           Nous devions réaliser une vidéo promotionnelle pour leur boutique.
           Nous nous sommes alignés avec leurs valeurs et motivations, et avons
@@ -48,14 +56,14 @@ import Footer from "../../components/Footer.astro";
         </p>
       </section>
       <section class="skills">
-        <h2>Compétences</h2>
+        <h2 class="project-heading">Compétences</h2>
         <p>
           Ici, j'ai beaucoup travaillé sur la partie de pré-production, mais
           aussi post production avec le montage de la vidéo sur Première Pro.
         </p>
       </section>
       <section class="productions">
-        <h2>La production</h2>
+        <h2 class="project-heading">La production</h2>
         <p>
           Je vous invite à consulter la présentation finale, pour découvrir
           notre argumentation et la vidéo :
@@ -85,49 +93,36 @@ import Footer from "../../components/Footer.astro";
 </html>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: var(--space-2xl);
+    box-sizing: border-box;
+    margin-top: 150px;
+  }
+
   body {
     background: var(--primary);
     display: flex;
     flex-direction: column;
+    width: 100%;
     justify-content: center;
-    padding: 30px 0px 30px 0px;
-    align-items: stretch;
-    gap: 80px;
+    gap: var(--space-xl);
+  }
+
+  section {
+    padding: 0 var(--space-s-m);
   }
 
   header {
     display: flex;
-    padding: 0px 120px;
+    width: 100%;
+    padding: 0 var(--space-s-m);
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
+    gap: var(--space-s);
   }
 
-  h1 {
-    color: var(--title);
-    font-family: "Monotalic";
-    font-size: 55px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h2 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 44px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h3 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 35px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
   p {
     color: var(--text-primary);
     font-family: "Fibra One";
@@ -142,16 +137,6 @@ import Footer from "../../components/Footer.astro";
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
-  }
-
-  main {
-    display: flex;
-    padding: 0px 120px;
-    width: fit-content;
-    margin: 0 auto;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 80px;
   }
 
   .hero {
@@ -181,8 +166,6 @@ import Footer from "../../components/Footer.astro";
   }
 
   .def {
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background: var(--secondary);
   }
@@ -192,7 +175,12 @@ import Footer from "../../components/Footer.astro";
     flex-direction: column;
     width: 100%;
     gap: 20px;
-    padding: 60px 120px;
-    box-sizing: border-box;
+    padding: var(--space-s-m);
+  }
+
+  @media screen and (max-width: 480px) {
+    main {
+      margin-top: 0;
+    }
   }
 </style>

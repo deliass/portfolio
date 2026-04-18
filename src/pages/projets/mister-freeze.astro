@@ -1,6 +1,7 @@
 ---
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 ---
 
 <html lang="fr">
@@ -16,37 +17,44 @@ import Footer from "../../components/Footer.astro";
   </head>
   <body>
     <Nav />
-    <header>
-      <h1>Webdesign du site de *Mister Freeze</h1>
-      <div class="hero">
-        <img
-          src="/public/assets/images/projects/mister-freeze/cedric.jpg"
-          alt=""
-        />
-      </div>
-    </header>
-    <section class="def">
-      <div class="def__inner">
-        <p>
-          <b>*Mister Freeze :</b><br />L’association Mister Freeze réunit un
-          collectif d’artistes (peintres, graffeurs, photographes, graphistes,
-          webdesigners, réalisateurs...) dont les envies respectives convergent
-          vers une diffusion de l’art au plus grand nombre sur un maximum de
-          supports. Profondément passionnés et impliqués, les membres de
-          l’association multiplient les interventions artistiques auprès du
-          grand public (expositions, ateliers, conférences, performances,
-          fresques murales) pour mieux former les jeunes talents, initier petits
-          et grands et plus largement, rendre l’art accessible à toutes et à
-          tous.
-        </p>
-        <a href="https://www.instagram.com/expomisterfreeze/"
-          >Visiter leur Instagram</a
-        >
-      </div>
-    </section>
     <main>
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Accueil" },
+          { href: "/mes-projets", label: "Mes projets" },
+        ]}
+        current="Mister Freeze"
+      />
+      <header>
+        <h1 class="project-title">Webdesign du site de *Mister Freeze</h1>
+        <div class="hero">
+          <img
+            src="/public/assets/images/projects/mister-freeze/cedric.jpg"
+            alt=""
+          />
+        </div>
+      </header>
+      <section class="def">
+        <div class="def__inner">
+          <p>
+            <b>*Mister Freeze :</b><br />L’association Mister Freeze réunit un
+            collectif d’artistes (peintres, graffeurs, photographes, graphistes,
+            webdesigners, réalisateurs...) dont les envies respectives
+            convergent vers une diffusion de l’art au plus grand nombre sur un
+            maximum de supports. Profondément passionnés et impliqués, les
+            membres de l’association multiplient les interventions artistiques
+            auprès du grand public (expositions, ateliers, conférences,
+            performances, fresques murales) pour mieux former les jeunes
+            talents, initier petits et grands et plus largement, rendre l’art
+            accessible à toutes et à tous.
+          </p>
+          <a href="https://www.instagram.com/expomisterfreeze/" target="_blank"
+            >Visiter leur Instagram</a
+          >
+        </div>
+      </section>
       <section class="contexte">
-        <h2>Contexte</h2>
+        <h2 class="project-heading">Contexte</h2>
         <p>
           Durant mon stage de 4 mois, j'ai eu la chance de partir à Montauban
           pour travailler sur le design de leur site web. J'ai pu rencontrer
@@ -55,7 +63,7 @@ import Footer from "../../components/Footer.astro";
         </p>
       </section>
       <section class="skills">
-        <h2>Compétences</h2>
+        <h2 class="project-heading">Compétences</h2>
         <p>
           Pendant ce projet, j'ai travailler sur Figma, mais j'ai pu développer
           beaucoup de soft skills, comme la prise de lead lors de réunion avec
@@ -66,10 +74,10 @@ import Footer from "../../components/Footer.astro";
         </p>
       </section>
       <section class="productions">
-        <h2>La maquette</h2>
+        <h2 class="project-heading">La maquette</h2>
         <a
           href="https://www.figma.com/proto/bKqUAO9QACp7bBJ0fhcqS7/Mister-Freeze?page-id=0%3A1&node-id=43-266&viewport=-2253%2C202%2C0.11&t=Ufkp9kpCKJwqa99e-1&scaling=min-zoom&content-scaling=fixed"
-          >Voir la maquette sur Figma</a
+          target="_blank">Voir la maquette sur Figma</a
         >
         <p>
           La maquette n'est malheureusement pas finie ici car je n'ai pas pu le
@@ -82,49 +90,36 @@ import Footer from "../../components/Footer.astro";
 </html>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: var(--space-2xl);
+    box-sizing: border-box;
+    margin-top: 150px;
+  }
+
   body {
     background: var(--primary);
     display: flex;
     flex-direction: column;
+    width: 100%;
     justify-content: center;
-    padding: 30px 0px 30px 0px;
-    align-items: stretch;
-    gap: 80px;
+    gap: var(--space-xl);
+  }
+
+  section {
+    padding: 0 var(--space-s-m);
   }
 
   header {
     display: flex;
-    padding: 0px 120px;
+    width: 100%;
+    padding: 0 var(--space-s-m);
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
+    gap: var(--space-s);
   }
 
-  h1 {
-    color: var(--title);
-    font-family: "Monotalic";
-    font-size: 55px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h2 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 44px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h3 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 35px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
   p {
     color: var(--text-primary);
     font-family: "Fibra One";
@@ -139,16 +134,6 @@ import Footer from "../../components/Footer.astro";
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
-  }
-
-  main {
-    display: flex;
-    padding: 0px 120px;
-    width: fit-content;
-    margin: 0 auto;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 80px;
   }
 
   .hero {
@@ -179,8 +164,6 @@ import Footer from "../../components/Footer.astro";
   }
 
   .def {
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background: var(--secondary);
   }
@@ -190,7 +173,12 @@ import Footer from "../../components/Footer.astro";
     flex-direction: column;
     width: 100%;
     gap: 20px;
-    padding: 60px 120px;
-    box-sizing: border-box;
+    padding: var(--space-s-m);
+  }
+
+  @media screen and (max-width: 480px) {
+    main {
+      margin-top: 0;
+    }
   }
 </style>

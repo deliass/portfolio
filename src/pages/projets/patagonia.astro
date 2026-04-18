@@ -1,6 +1,7 @@
 ---
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 ---
 
 <html lang="fr">
@@ -16,26 +17,33 @@ import Footer from "../../components/Footer.astro";
   </head>
   <body>
     <Nav />
-    <header>
-      <h1>Projet fictif pour Patagonia</h1>
-      <div class="hero">
-        <img
-          src="/public/assets/images/projects/patagonia/patagonia.png"
-          alt=""
-        />
-      </div>
-    </header>
-    <section class="def">
-      <div class="def__inner">
-        <p>
-          Projet fictif réalisé dans le cadre de mes études, pour la marque
-          Patagonia.
-        </p>
-      </div>
-    </section>
     <main>
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Accueil" },
+          { href: "/mes-projets", label: "Mes projets" },
+        ]}
+        current="Patagonia"
+      />
+      <header>
+        <h1 class="project-title">Projet fictif pour Patagonia</h1>
+        <div class="hero">
+          <img
+            src="/public/assets/images/projects/patagonia/patagonia.png"
+            alt=""
+          />
+        </div>
+      </header>
+      <section class="def">
+        <div class="def__inner">
+          <p>
+            Projet fictif réalisé dans le cadre de mes études, pour la marque
+            Patagonia.
+          </p>
+        </div>
+      </section>
       <section class="contexte">
-        <h2>Contexte</h2>
+        <h2 class="project-heading">Contexte</h2>
         <p>
           Le projet consistait à imaginer une campagne de communication, et de
           propositions UI et UX pour le site web de la marque, en respectant son
@@ -47,7 +55,7 @@ import Footer from "../../components/Footer.astro";
         </p>
       </section>
       <section class="skills">
-        <h2>Compétences</h2>
+        <h2 class="project-heading">Compétences</h2>
         <p>
           Ici, j'ai surtout travaillé les recommandations UX et la maquette du
           site, mais j'ai aussi pu travailler sur la création de la vidéo, en
@@ -55,17 +63,17 @@ import Footer from "../../components/Footer.astro";
         </p>
       </section>
       <section class="productions">
-        <h2>Les productions</h2>
+        <h2 class="project-heading">Les productions</h2>
         <p>
           Voici <a
             href="https://www.figma.com/proto/KZkasfY40baPn7AldgNYbQ/patagonia?page-id=0%3A1&node-id=1-26&p=f&viewport=140%2C311%2C0.11&t=zELMVhi4PgWjh4qa-1&scaling=min-zoom&content-scaling=fixed"
-            >le lien</a
+            target="_blank">le lien</a
           > pour voir la maquette du site et les recommandations UX.
         </p>
         <p>
           <a
             href="https://www.instagram.com/reel/DVPUqYkiLqf/?utm_source=ig_web_copy_link"
-            >Ici</a
+            target="_blank">Ici</a
           >, vous trouverez la vidéo.
         </p>
         <p>
@@ -97,49 +105,36 @@ import Footer from "../../components/Footer.astro";
 </html>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: var(--space-2xl);
+    box-sizing: border-box;
+    margin-top: 150px;
+  }
+
   body {
     background: var(--primary);
     display: flex;
     flex-direction: column;
+    width: 100%;
     justify-content: center;
-    padding: 30px 0px 30px 0px;
-    align-items: stretch;
-    gap: 80px;
+    gap: var(--space-xl);
+  }
+
+  section {
+    padding: 0 var(--space-s-m);
   }
 
   header {
     display: flex;
-    padding: 0px 120px;
+    width: 100%;
+    padding: 0 var(--space-s-m);
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
+    gap: var(--space-s);
   }
 
-  h1 {
-    color: var(--title);
-    font-family: "Monotalic";
-    font-size: 55px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h2 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 44px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h3 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 35px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
   p {
     color: var(--text-primary);
     font-family: "Fibra One";
@@ -154,16 +149,6 @@ import Footer from "../../components/Footer.astro";
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
-  }
-
-  main {
-    display: flex;
-    padding: 0px 120px;
-    width: fit-content;
-    margin: 0 auto;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 80px;
   }
 
   .hero {
@@ -194,8 +179,6 @@ import Footer from "../../components/Footer.astro";
   }
 
   .def {
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background: var(--secondary);
   }
@@ -205,7 +188,12 @@ import Footer from "../../components/Footer.astro";
     flex-direction: column;
     width: 100%;
     gap: 20px;
-    padding: 60px 120px;
-    box-sizing: border-box;
+    padding: var(--space-s-m);
+  }
+
+  @media screen and (max-width: 480px) {
+    main {
+      margin-top: 0;
+    }
   }
 </style>

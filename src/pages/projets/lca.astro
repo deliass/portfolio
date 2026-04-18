@@ -1,6 +1,7 @@
 ---
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 ---
 
 <html lang="fr">
@@ -16,45 +17,54 @@ import Footer from "../../components/Footer.astro";
   </head>
   <body>
     <Nav />
-    <header>
-      <h1>Communication pour *LCA</h1>
-      <div class="hero">
-        <img
-          src="/public/assets/images/projects/lca/lca.svg"
-          alt=""
-          height="400px"
-        />
-      </div>
-    </header>
-    <section class="def">
-      <div class="def__inner">
-        <p>
-          <b>*La Conciergerie Administrative :</b><br />C'est l'entreprise pour
-          laquelle je travaille en alternance. Charlotte propose ses services
-          d'audit d'entreprises pour alléger et améliorer la santé financière et
-          légale de ses clients.
-        </p>
-        <a href="https://www.laconciergerieadministrative.com/">Voir son site</a
-        >
-      </div>
-    </section>
     <main>
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Accueil" },
+          { href: "/mes-projets", label: "Mes projets" },
+        ]}
+        current="La Conciergerie Administrative"
+      />
+      <header>
+        <h1 class="project-title">Communication pour *LCA</h1>
+        <div class="hero">
+          <img
+            src="/public/assets/images/projects/lca/lca.svg"
+            alt=""
+            height="400px"
+          />
+        </div>
+      </header>
+      <section class="def">
+        <div class="def__inner">
+          <p>
+            <b>*La Conciergerie Administrative :</b><br />C'est l'entreprise
+            pour laquelle je travaille en alternance. Charlotte propose ses
+            services d'audit d'entreprises pour alléger et améliorer la santé
+            financière et légale de ses clients.
+          </p>
+          <a
+            href="https://www.laconciergerieadministrative.com/"
+            target="_blank">Voir son site</a
+          >
+        </div>
+      </section>
       <section class="contexte">
-        <h2>Contexte</h2>
+        <h2 class="project-heading">Contexte</h2>
         <p>
           Je fais mon alternance avec un double contrat. Je suis à la fois
           webdesigner et dev, mais aussi chargée de communication. C'est dans ce
           second rôle que je réalise la communication de LCA, sur <a
             href="https://www.instagram.com/laconciergerieadministrative/"
-            >Instagram</a
+            target="_blank">Instagram</a
           > et <a
             href="https://www.linkedin.com/company/la-conciergerie-administrative1/posts/?feedView=all"
-            >LinkedIn</a
+            target="_blank">LinkedIn</a
           >.
         </p>
       </section>
       <section class="skills">
-        <h2>Compétences</h2>
+        <h2 class="project-heading">Compétences</h2>
         <p>
           Je crée les visuels sur Canva, et fais ma veille sur Pinterest ou
           Instagram. Notre principal outil de travail est Monday. Je réalise
@@ -72,49 +82,36 @@ import Footer from "../../components/Footer.astro";
 </html>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: var(--space-2xl);
+    box-sizing: border-box;
+    margin-top: 150px;
+  }
+
   body {
     background: var(--primary);
     display: flex;
     flex-direction: column;
+    width: 100%;
     justify-content: center;
-    padding: 30px 0px 30px 0px;
-    align-items: stretch;
-    gap: 80px;
+    gap: var(--space-xl);
+  }
+
+  section {
+    padding: 0 var(--space-s-m);
   }
 
   header {
     display: flex;
-    padding: 0px 120px;
+    width: 100%;
+    padding: 0 var(--space-s-m);
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
+    gap: var(--space-s);
   }
 
-  h1 {
-    color: var(--title);
-    font-family: "Monotalic";
-    font-size: 55px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h2 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 44px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h3 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 35px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
   p {
     color: var(--text-primary);
     font-family: "Fibra One";
@@ -129,16 +126,6 @@ import Footer from "../../components/Footer.astro";
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
-  }
-
-  main {
-    display: flex;
-    padding: 0px 120px;
-    width: fit-content;
-    margin: 0 auto;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 80px;
   }
 
   .hero {
@@ -168,8 +155,6 @@ import Footer from "../../components/Footer.astro";
   }
 
   .def {
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background: var(--secondary);
   }
@@ -179,7 +164,12 @@ import Footer from "../../components/Footer.astro";
     flex-direction: column;
     width: 100%;
     gap: 20px;
-    padding: 60px 120px;
-    box-sizing: border-box;
+    padding: var(--space-s-m);
+  }
+
+  @media screen and (max-width: 480px) {
+    main {
+      margin-top: 0;
+    }
   }
 </style>

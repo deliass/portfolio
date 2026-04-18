@@ -39,3 +39,41 @@ font-family:'monotalic';
 	font-display: swap;
 	size-adjust: 98%;
 }
+
+.project-title {
+	  color: var(--title);
+    font-family: "Monotalic";
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.project-heading {
+	color: var(--title);
+	font-family: "ABC Favorit Mono Edu";
+	font-size: 44px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.project-subheading {
+	color: var(--title);
+	font-family: "ABC Favorit Mono Edu";
+	font-size: 35px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+@media screen and (max-width: 480px) {
+	.project-title {
+		font-size: 36px;
+	}
+	
+	.project-heading {
+		font-size: 32px;
+	}
+	
+	.project-subheading {
+		font-size: 28px;
+	}
+}

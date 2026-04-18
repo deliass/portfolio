@@ -1,6 +1,7 @@
 ---
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 ---
 
 <html lang="fr">
@@ -16,41 +17,51 @@ import Footer from "../../components/Footer.astro";
   </head>
   <body>
     <Nav />
-    <header>
-      <h1>UX Design pour *Spiral Éditions</h1>
-    </header>
-    <section class="def">
-      <div class="def__inner">
-        <p>
-          <b>*Spiral Éditions :</b>
-          <br />Une jeune société d’édition française basée dans le Sud de la
-          France, à Muret, à quelques kilomètres de Toulouse. Elle est née en
-          2021 sous l’impulsion de quatre amis qui se sont connus grâce à
-          l’univers du jeu. Il y a Mathias, Théo, Guillaume et Yannick. Tous
-          impliqués dans le milieu du jeu de société, à des degrés divers, ils
-          ont décidé de faire découvrir à leur tour au public les jeux qu’ils
-          aiment. Chez Spiral Éditions, l’objectif est avant tout d’éditer des
-          jeux qui vont s’inscrire dans le temps. Des jeux auxquels vous aurez,
-          encore et toujours envie de rejouer !
-        </p>
-        <a href="https://blackrockgames.fr/pages/FAR00097">Les découvrir</a>
-      </div>
-    </section>
     <main>
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Accueil" },
+          { href: "/mes-projets", label: "Mes projets" },
+        ]}
+        current="UX Spiral Éditions"
+      />
+      <header>
+        <h1 class="project-title">UX Design pour *Spiral Éditions</h1>
+      </header>
+      <section class="def">
+        <div class="def__inner">
+          <p>
+            <b>*Spiral Éditions :</b>
+            <br />Une jeune société d’édition française basée dans le Sud de la
+            France, à Muret, à quelques kilomètres de Toulouse. Elle est née en
+            2021 sous l’impulsion de quatre amis qui se sont connus grâce à
+            l’univers du jeu. Il y a Mathias, Théo, Guillaume et Yannick. Tous
+            impliqués dans le milieu du jeu de société, à des degrés divers, ils
+            ont décidé de faire découvrir à leur tour au public les jeux qu’ils
+            aiment. Chez Spiral Éditions, l’objectif est avant tout d’éditer des
+            jeux qui vont s’inscrire dans le temps. Des jeux auxquels vous
+            aurez, encore et toujours envie de rejouer !
+          </p>
+          <a href="https://blackrockgames.fr/pages/FAR00097" target="_blank"
+            >Les découvrir</a
+          >
+        </div>
+      </section>
       <section class="contexte">
-        <h2>Contexte</h2>
+        <h2 class="project-heading">Contexte</h2>
         <p>
           Nous avons eu pour mission de designer le stand de l'équipe pour le <a
             href="https://www.festivaldesjeux-cannes.com/fr/"
-            >Festival de Cannes des Jeux</a
+            target="_blank">Festival de Cannes des Jeux</a
           > Nous avons donc eu une semaine de sprint pour réfléchir, penser, questionner,
           imaginer et concevoir ce design. Projet encadré par <a
-            href="https://www.linkedin.com/in/benoit-verger/">Benoît Verger</a
+            href="https://www.linkedin.com/in/benoit-verger/"
+            target="_blank">Benoît Verger</a
           >.
         </p>
       </section>
       <section class="skills">
-        <h2>Compétences</h2>
+        <h2 class="project-heading">Compétences</h2>
         <p>
           Durant le projet, nous étions en plusieurs groupes d'étudiants. Nous
           avons travaillé sur un benchmark du marché existant, nous avons
@@ -59,7 +70,7 @@ import Footer from "../../components/Footer.astro";
         </p>
       </section>
       <section class="productions">
-        <h2>Le rendu</h2>
+        <h2 class="project-heading">Le rendu</h2>
         <p>
           Si vous voulez voir la présentation finale, vous pouvez la consulter
           ici, pour découvrir mon process :
@@ -89,49 +100,36 @@ import Footer from "../../components/Footer.astro";
 </html>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: var(--space-2xl);
+    box-sizing: border-box;
+    margin-top: 150px;
+  }
+
   body {
     background: var(--primary);
     display: flex;
     flex-direction: column;
+    width: 100%;
     justify-content: center;
-    padding: 30px 0px 30px 0px;
-    align-items: stretch;
-    gap: 80px;
+    gap: var(--space-xl);
+  }
+
+  section {
+    padding: 0 var(--space-s-m);
   }
 
   header {
     display: flex;
-    padding: 0px 120px;
+    width: 100%;
+    padding: 0 var(--space-s-m);
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
+    gap: var(--space-s);
   }
 
-  h1 {
-    color: var(--title);
-    font-family: "Monotalic";
-    font-size: 55px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h2 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 44px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h3 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 35px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
   p {
     color: var(--text-primary);
     font-family: "Fibra One";
@@ -146,16 +144,6 @@ import Footer from "../../components/Footer.astro";
     font-size: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
-  }
-
-  main {
-    display: flex;
-    padding: 0px 120px;
-    width: fit-content;
-    margin: 0 auto;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 80px;
   }
 
   .hero {
@@ -186,8 +174,6 @@ import Footer from "../../components/Footer.astro";
   }
 
   .def {
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background: var(--secondary);
   }
@@ -197,7 +183,12 @@ import Footer from "../../components/Footer.astro";
     flex-direction: column;
     width: 100%;
     gap: 20px;
-    padding: 60px 120px;
-    box-sizing: border-box;
+    padding: var(--space-s-m);
+  }
+
+  @media screen and (max-width: 480px) {
+    main {
+      margin-top: 0;
+    }
   }
 </style>

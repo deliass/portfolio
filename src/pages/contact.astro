@@ -2,6 +2,7 @@
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import CV from "../components/CV.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 ---
 
 <html lang="fr">
@@ -17,15 +18,19 @@ import CV from "../components/CV.astro";
   </head>
   <body>
     <Nav />
-    <header>
-      <div class="title">
-        <h1>Me contacter</h1>
-        <img src="/public/assets/icons/contact-h.svg" alt="" />
-      </div>
-      <p>N’hésitez pas à me contacter si mon profil vous a plu !</p>
-    </header>
     <main>
-      <div class="contact__info">
+      <Breadcrumbs
+        items={[{ href: "/", label: "Accueil" }]}
+        current="Contact"
+      />
+      <header>
+        <div class="title">
+          <h1>Me contacter</h1>
+          <img src="/public/assets/icons/contact-h.svg" alt="" />
+        </div>
+        <p>N'hésitez pas à me contacter si mon profil vous a plu !</p>
+      </header>
+      <section class="contact__info">
         <div class="tel">
           <img
             src="/public/assets/icons/phone.svg"
@@ -44,44 +49,42 @@ import CV from "../components/CV.astro";
           />
           <a href="mailto:nelia@tuta.io">nelia@tuta.io</a>
         </div>
-      </div>
+      </section>
+      <CV />
     </main>
-    <CV />
     <Footer />
   </body>
 </html>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: var(--space-2xl);
+    box-sizing: border-box;
+    margin-top: 150px;
+  }
+
   body {
     background: var(--primary);
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     justify-content: center;
     gap: var(--space-xl);
   }
 
+  section {
+    padding: 0 var(--space-s-m);
+  }
+
   header {
     display: flex;
     width: 100%;
-    padding: 0 var(--space-m-l);
+    padding: 0 var(--space-s-m);
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: flex-start;
     gap: var(--space-s);
-    box-sizing: border-box;
-  }
-
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 var(--space-m-l);
-    width: 100%;
-    flex-direction: column;
-    align-self: stretch;
-    gap: var(--space-2xl);
-    box-sizing: border-box;
   }
 
   h1 {
@@ -141,6 +144,10 @@ import CV from "../components/CV.astro";
   @media (max-width: 480px) {
     * img {
       display: none;
+    }
+
+    main {
+      margin-top: 0;
     }
   }
 </style>

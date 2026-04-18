@@ -1,6 +1,7 @@
 ---
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
 ---
 
 <html lang="fr">
@@ -16,26 +17,35 @@ import Footer from "../../components/Footer.astro";
   </head>
   <body>
     <Nav />
-    <header>
-      <h1>Projet photo pour *Les Belles Années Vintage</h1>
-      <div class="hero">
-        <img src="/public/assets/images/projects/lbav/hero.jpg" alt="" />
-      </div>
-    </header>
-    <section class="def">
-      <div class="def__inner">
-        <p>
-          <b>*Les Belles Années Vintage :</b><br />"Boutique atelier” vintage et
-          toulousaine. Désormais fermée, Sonia avait créée cette friperie
-          vintage au cœur des Carmes. Là-bas on pouvait assister à divers
-          ateliers créatifs et de coutures, afin de confectionner ou réparer ses
-          propores pièces.
-        </p>
-      </div>
-    </section>
     <main>
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Accueil" },
+          { href: "/mes-projets", label: "Mes projets" },
+        ]}
+        current="Les Belles Années Vintage"
+      />
+      <header>
+        <h1 class="project-title">
+          Projet photo pour *Les Belles Années Vintage
+        </h1>
+        <div class="hero">
+          <img src="/public/assets/images/projects/lbav/hero.jpg" alt="" />
+        </div>
+      </header>
+      <section class="def">
+        <div class="def__inner">
+          <p>
+            <b>*Les Belles Années Vintage :</b><br />"Boutique atelier” vintage
+            et toulousaine. Désormais fermée, Sonia avait créée cette friperie
+            vintage au cœur des Carmes. Là-bas on pouvait assister à divers
+            ateliers créatifs et de coutures, afin de confectionner ou réparer
+            ses propores pièces.
+          </p>
+        </div>
+      </section>
       <section class="contexte">
-        <h2>Contexte</h2>
+        <h2 class="project-heading">Contexte</h2>
         <p>
           Nous devions booster la présence de Sonia sur Instagram, pour cela,
           nous devions faire des photos d'une mannequin portant les pièces de la
@@ -44,7 +54,7 @@ import Footer from "../../components/Footer.astro";
         </p>
       </section>
       <section class="skills">
-        <h2>Compétences</h2>
+        <h2 class="project-heading">Compétences</h2>
         <p>
           J’ai eu l’occasion de tester la photographie de manière plus engagée,
           définie, que je ne le faisais pour moi. J'ai pu toucher à Light
@@ -52,7 +62,7 @@ import Footer from "../../components/Footer.astro";
         </p>
       </section>
       <section class="productions">
-        <h2>Productions</h2>
+        <h2 class="project-heading">Productions</h2>
         <p>Voici les photos que j'ai prises et retouchées :</p>
         <div class="photos">
           <img
@@ -95,49 +105,32 @@ import Footer from "../../components/Footer.astro";
 </html>
 
 <style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap: var(--space-2xl);
+    box-sizing: border-box;
+    margin-top: 150px;
+  }
+
   body {
     background: var(--primary);
     display: flex;
     flex-direction: column;
+    width: 100%;
     justify-content: center;
-    padding: 30px 0px 30px 0px;
-    align-items: stretch;
-    gap: 80px;
+    gap: var(--space-xl);
   }
 
   header {
     display: flex;
-    padding: 0px 120px;
+    width: 100%;
+    padding: 0 var(--space-s-m);
     flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
+    gap: var(--space-s);
   }
 
-  h1 {
-    color: var(--title);
-    font-family: "Monotalic";
-    font-size: 55px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h2 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 44px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  h3 {
-    color: var(--title);
-    font-family: "ABC Favorit Mono Edu";
-    font-size: 35px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
   p {
     color: var(--text-primary);
     font-family: "Fibra One";
@@ -154,14 +147,8 @@ import Footer from "../../components/Footer.astro";
     margin-bottom: 0px;
   }
 
-  main {
-    display: flex;
-    padding: 0px 120px;
-    width: fit-content;
-    margin: 0 auto;
-    flex-direction: column;
-    align-self: stretch;
-    gap: 80px;
+  section {
+    padding: 0 var(--space-s-m);
   }
 
   .hero {
@@ -172,15 +159,14 @@ import Footer from "../../components/Footer.astro";
   }
 
   .photos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
 
   .photo-bottom {
+    height: 100%;
     width: 100%;
-    height: auto;
   }
 
   .contexte,
@@ -192,8 +178,6 @@ import Footer from "../../components/Footer.astro";
   }
 
   .def {
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background: var(--secondary);
   }
@@ -203,7 +187,16 @@ import Footer from "../../components/Footer.astro";
     flex-direction: column;
     width: 100%;
     gap: 20px;
-    padding: 60px 120px;
-    box-sizing: border-box;
+    padding: var(--space-s-m);
+  }
+
+  @media screen and (max-width: 480px) {
+    main {
+      margin-top: 0;
+    }
+
+    .photos {
+      flex-direction: column;
+    }
   }
 </style>

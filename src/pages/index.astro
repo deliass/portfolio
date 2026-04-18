@@ -63,39 +63,39 @@ import Contact from "../components/Contact.astro";
           </div>
         </div>
       </section>
-        <section class="inspi">
-          <div class="inspi__assets">
-            <h2>Veille et inspirations</h2>
-            <img src="/public/assets/icons/heart.svg" alt="" />
+      <section class="inspi">
+        <div class="inspi__assets">
+          <h2>Veille et inspirations</h2>
+          <img src="/public/assets/icons/heart.svg" alt="" />
+        </div>
+        <div class="inspi__inner">
+          <div class="speakers">
+            <h3>Personnalités & Speakers</h3>
+            <p>
+              Professionnels, amateurs ou artistes, j’aime ouvrir ma veille à
+              tous les horizons pour en apprendre toujours, même à petite
+              échelle.
+            </p>
           </div>
-          <div class="inspi__inner">
-            <div class="speakers">
-              <h3>Personnalités & Speakers</h3>
-              <p>
-                Professionnels, amateurs ou artistes, j’aime ouvrir ma veille à
-                tous les horizons pour en apprendre toujours, même à petite
-                échelle.
-              </p>
-            </div>
-            <div class="design">
-              <h3>Typographies & Design</h3>
-              <p>
-                Je préfère les typos et les designs accessibles. Mais voir des
-                designs et typos souvent plus beaux que utiles, me permet de
-                garder une inspiration originale.
-              </p>
-            </div>
-            <div class="veille">
-              <h3>Veille</h3>
-              <p>
-                J’ai mis du temps à adapter un système de veille efficace. Flux
-                RSS, influenceurs, boards. Aujourd’hui, j’ai préféré tout réunir
-                en seul endroit, mon site.
-              </p>
-            </div>
+          <div class="design">
+            <h3>Typographies & Design</h3>
+            <p>
+              Je préfère les typos et les designs accessibles. Mais voir des
+              designs et typos souvent plus beaux que utiles, me permet de
+              garder une inspiration originale.
+            </p>
           </div>
-          <Button title="Voir mes inspirations" link="/wip/" />
-        </section>
+          <div class="veille">
+            <h3>Veille</h3>
+            <p>
+              J’ai mis du temps à adapter un système de veille efficace. Flux
+              RSS, influenceurs, boards. Aujourd’hui, j’ai préféré tout réunir
+              en seul endroit, mon site.
+            </p>
+          </div>
+        </div>
+        <Button title="Voir mes inspirations" link="/wip/" />
+      </section>
       <Contact />
     </main>
     <Footer />
@@ -175,31 +175,22 @@ import Contact from "../components/Contact.astro";
 
   main {
     display: flex;
-    flex-wrap: wrap;
     max-width: 1200px;
     flex-direction: column;
-    align-self: stretch;
     gap: var(--space-2xl);
     margin-top: 150px;
-    box-sizing: border-box;
   }
 
   .welcome {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     background: var(--secondary);
   }
 
   .welcome__inner {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     gap: var(--space-m);
-    padding: var(--space-l-xl) var(--space-2xl-3xl);
-    box-sizing: border-box;
+    padding: var(--space-l-xl);
   }
 
   .welcome__assets {
@@ -214,7 +205,6 @@ import Contact from "../components/Contact.astro";
 
   .inspi {
     display: flex;
-    flex-wrap: wrap;
     padding: var(--space-xs-s);
     flex-direction: column;
     justify-content: center;
@@ -242,21 +232,20 @@ import Contact from "../components/Contact.astro";
   .design,
   .veille {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     background-color: var(--secondary);
     gap: 20px;
-    justify-content: space-between;
     padding: var(--space-s-m);
-    align-items: flex-start;
-    align-self: start;
     border-radius: 10px;
   }
 
-  /* Media query uniquement pour cacher les déco SVG sur très petit écran */
-  @media (max-width: 480px) {
+  @media screen and (max-width: 480px) {
     * img {
       display: none;
+    }
+
+    main {
+      margin-top: 0;
     }
 
     .inspi__inner {
