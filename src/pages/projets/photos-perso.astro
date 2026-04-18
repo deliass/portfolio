@@ -2,19 +2,11 @@
 import Nav from "../../components/Nav.astro";
 import Footer from "../../components/Footer.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Head from "../../components/Head.astro";
 ---
 
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/src/style/fonts.css" />
-    <link rel="stylesheet" href="/src/style/variables.css" />
-    <title>Nélia Figuerola</title>
-  </head>
+  <Head />
   <body>
     <Nav />
     <main>
@@ -29,7 +21,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
         <h1 class="project-title">Photos urbaines</h1>
         <div class="hero">
           <img
-            src="/public/assets/images/projects/photos-perso/st-jacques.jpg"
+            src="/assets/images/projects/photos-perso/st-jacques.jpg"
             alt=""
           />
         </div>
@@ -50,47 +42,25 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
         <h2 class="project-heading">Productions</h2>
         <p>Voici les photos que j'ai prises :</p>
         <div class="photos">
+          <img src="/assets/images/projects/photos-perso/perpi1.jpg" alt="" />
+          <img src="/assets/images/projects/photos-perso/perpi2.jpg" alt="" />
+          <img src="/assets/images/projects/photos-perso/perpi3.jpg" alt="" />
+          <img src="/assets/images/projects/photos-perso/perpi4.jpg" alt="" />
+          <img src="/assets/images/projects/photos-perso/maxime.jpg" alt="" />
+          <img src="/assets/images/projects/photos-perso/mns2.jpg" alt="" />
           <img
-            src="/public/assets/images/projects/photos-perso/perpi1.jpg"
+            src="/assets/images/projects/photos-perso/toulouse1.jpg"
             alt=""
           />
           <img
-            src="/public/assets/images/projects/photos-perso/perpi2.jpg"
+            src="/assets/images/projects/photos-perso/toulouse2.jpg"
             alt=""
           />
-          <img
-            src="/public/assets/images/projects/photos-perso/perpi3.jpg"
-            alt=""
-          />
-          <img
-            src="/public/assets/images/projects/photos-perso/perpi4.jpg"
-            alt=""
-          />
-          <img
-            src="/public/assets/images/projects/photos-perso/maxime.jpg"
-            alt=""
-          />
-          <img
-            src="/public/assets/images/projects/photos-perso/mns2.jpg"
-            alt=""
-          />
-          <img
-            src="/public/assets/images/projects/photos-perso/toulouse1.jpg"
-            alt=""
-          />
-          <img
-            src="/public/assets/images/projects/photos-perso/toulouse2.jpg"
-            alt=""
-          />
-          <img
-            src="/public/assets/images/projects/photos-perso/mns1.jpg"
-            alt=""
-          />
+          <img src="/assets/images/projects/photos-perso/mns1.jpg" alt="" />
         </div>
       </section>
     </main>
-  </body>
-  <Footer />
+  </body><Footer />
 </html>
 
 <style>

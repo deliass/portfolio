@@ -5,19 +5,11 @@ import Footer from "../components/Footer.astro";
 import Contact from "../components/Contact.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Head from "../components/Head.astro";
 ---
 
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/src/style/fonts.css" />
-    <link rel="stylesheet" href="/src/style/variables.css" />
-    <title>Nélia Figuerola</title>
-  </head>
+  <Head />
   <body>
     <Nav />
     <main>
@@ -28,7 +20,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
       <header>
         <div class="title">
           <h1>Mes projets</h1>
-          <img src="/public/assets/icons/project-h.svg" alt="" />
+          <img src="/assets/icons/project-h.svg" alt="" />
         </div>
         <div class="hero">
           <p>
@@ -78,7 +70,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
             </ul>
           </div>
           <img
-            src="/public/assets/icons/categories.svg"
+            src="/assets/icons/categories.svg"
             alt=""
             width="134"
             height="135"

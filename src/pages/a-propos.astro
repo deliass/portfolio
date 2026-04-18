@@ -4,19 +4,11 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Contact from "../components/Contact.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Head from "../components/Head.astro";
 ---
 
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/src/style/fonts.css" />
-    <link rel="stylesheet" href="/src/style/variables.css" />
-    <title>Nélia Figuerola</title>
-  </head>
+  <Head />
   <body>
     <Nav />
     <main>
@@ -60,24 +52,14 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
         </p>
         <div class="cta">
           <Button title="Découvrir mes projets" link="/mes-projets/" />
-          <img
-            src="/public/assets/icons/star1.svg"
-            alt=""
-            width="46"
-            height="61"
-          />
+          <img src="/assets/icons/star1.svg" alt="" width="46" height="61" />
         </div>
       </section>
       <section class="parkour">
         <div class="parkour_inner">
           <div class="title_parkour">
             <h2>Mon parcours professionnel</h2>
-            <img
-              src="/public/assets/icons/star2.svg"
-              alt=""
-              width="78"
-              height="68"
-            />
+            <img src="/assets/icons/star2.svg" alt="" width="78" height="68" />
           </div>
 
           <div class="alternance">

@@ -3,20 +3,11 @@ import Button from "../components/Button.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Contact from "../components/Contact.astro";
+import Head from "../components/Head.astro";
 ---
 
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="https://use.typekit.net/cwl4czb.css" />
-    <link rel="stylesheet" href="/src/style/fonts.css" />
-    <link rel="stylesheet" href="/src/style/variables.css" />
-    <title>Nélia Figuerola</title>
-  </head>
+  <Head />
   <body>
     <Nav />
     <main>
@@ -55,7 +46,7 @@ import Contact from "../components/Contact.astro";
           <div class="welcome__assets">
             <Button title="Découvrir mes projets" link="/mes-projets/" />
             <img
-              src="/public/assets/icons/welcome.svg"
+              src="/assets/icons/welcome.svg"
               alt=""
               width="78"
               height="68"
@@ -66,7 +57,7 @@ import Contact from "../components/Contact.astro";
       <section class="inspi">
         <div class="inspi__assets">
           <h2>Veille et inspirations</h2>
-          <img src="/public/assets/icons/heart.svg" alt="" />
+          <img src="/assets/icons/heart.svg" alt="" />
         </div>
         <div class="inspi__inner">
           <div class="speakers">

@@ -3,19 +3,11 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import CV from "../components/CV.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Head from "../components/Head.astro";
 ---
 
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="/src/style/fonts.css" />
-    <link rel="stylesheet" href="/src/style/variables.css" />
-    <title>Nélia Figuerola</title>
-  </head>
+  <Head />
   <body>
     <Nav />
     <main>
@@ -26,14 +18,14 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
       <header>
         <div class="title">
           <h1>Me contacter</h1>
-          <img src="/public/assets/icons/contact-h.svg" alt="" />
+          <img src="/assets/icons/contact-h.svg" alt="" />
         </div>
         <p>N'hésitez pas à me contacter si mon profil vous a plu !</p>
       </header>
       <section class="contact__info">
         <div class="tel">
           <img
-            src="/public/assets/icons/phone.svg"
+            src="/assets/icons/phone.svg"
             alt="Téléphone"
             width="19"
             height="19"
@@ -42,7 +34,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
         </div>
         <div class="email">
           <img
-            src="/public/assets/icons/mail.svg"
+            src="/assets/icons/mail.svg"
             alt="Email"
             width="19"
             height="19"

@@ -1,13 +1,13 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
 import Button from "../components/Button.astro";
+import Head from "../components/Head.astro";
 ---
 
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
+  <Head />
+  <body>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,26 +15,27 @@ import Button from "../components/Button.astro";
     <link rel="stylesheet" href="/src/style/fonts.css" />
     <link rel="stylesheet" href="/src/style/variables.css" />
     <title>Nélia Figuerola</title>
-  </head>
-  <body>
-    <Nav />
-    <main>
-      <header>
-        <h1 class="project-title">Page en construction</h1>
-        <p>
-          Cette page est actuellement en construction, elle sera bientôt
-          disponible !
-        </p>
-        <Button title="Retour" link="#" id="back" />
-        <script>
-          document.getElementById("back")?.addEventListener("click", () => {
-            history.back();
-            console.log("click");
-          });
-        </script>
-      </header>
-    </main>
-    <Footer />
+
+    <body>
+      <Nav />
+      <main>
+        <header>
+          <h1 class="project-title">Page en construction</h1>
+          <p>
+            Cette page est actuellement en construction, elle sera bientôt
+            disponible !
+          </p>
+          <Button title="Retour" link="#" id="back" />
+          <script>
+            document.getElementById("back")?.addEventListener("click", () => {
+              history.back();
+              console.log("click");
+            });
+          </script>
+        </header>
+      </main>
+      <Footer />
+    </body>
   </body>
 </html>
 
