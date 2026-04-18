@@ -3,6 +3,10 @@ import BaseLayout from "../../layout/default.astro"
 import Contact from "../../components/Contact.astro"
 import ProjectCard from "../../components/ProjectCard.astro"
 import Breadcrumbs from "../../components/Breadcrumbs.astro"
+
+import { getCollection } from "astro:content"
+
+const posts = await getCollection("projects")
 ---
 
 <BaseLayout pageTitle="Projets">
@@ -23,6 +27,34 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro"
 				</p>
 			</div>
 		</section>
+		<!--
+		Décommenter cette section et migrer les pages projets vers la "content collection".
+		-->
+		<!--
+		<section>
+			<h2>Projets collection</h2>
+			<ul>
+				{
+					posts.map((post) => (
+						<li>
+							<a href={`/projets/${post.id}`}>{post.data.title}</a>
+							<ProjectCard
+								title={post.data.title}
+								year="2026"
+								type="Photo"
+								category="Scolaire"
+								filterType="photographie"
+								image={post.data.image}
+								alt="Projet photo scolaire"
+								href={`/projets/${post.id}`}
+								buttonLabel="Voir le projet"
+							/>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+		-->
 		<section class="projects">
 			<div class="categories">
 				<div class="category-filter">
