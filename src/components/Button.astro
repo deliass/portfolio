@@ -1,12 +1,28 @@
 ---
+interface Props {
+  title: string;
+
+  type?: string;
+
+  href?: string;
+
+  pdfUrl?: string;
+
+  id?: string;
+}
+
 const { title, type, href, pdfUrl, id } = Astro.props;
+
+const finalHref = pdfUrl || href || "#";
+
+const isDownload = !!pdfUrl;
 ---
 
 <a
   class:list={["button", type]}
-  href={pdfUrl || href}
-  download={pdfUrl ? true : undefined}
-  id={id ? id : ""}
+  href={finalHref}
+  download={isDownload ? "figuerola-nelia_CV.pdf" : undefined}
+  id={id || undefined}
 >
   {title}
   <span class="arrow">→</span>
