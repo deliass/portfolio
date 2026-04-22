@@ -4,7 +4,7 @@ slug: "photos-perso"
 type: Perso
 category: Photo
 filterType: photo
-image: /src/images/projects/photos-perso/st-jacques.JPG
+image: ../../images/projects/photos-perso/st-jacques.JPG
 description: "Photos prises avec mon Canon EOS 500 Digital."
 year: "2023-2026"
 ---
@@ -20,7 +20,7 @@ Voici les photos que j'ai prises :
 
 <div class="photos">
 
-![Photo dans Perpignan](../../images/projects/photos-perso/perpi1.png)
+![Photo dans Perpignan](/images/projects/photos-perso/perpi1.png)
 ![Photo dans Perpignan](../../images/projects/photos-perso/perpi2.png)
 ![Photo dans Perpignan](../../images/projects/photos-perso/perpi3.png)
 ![Photo de fleurs à Perpignan](../../images/projects/photos-perso/perpi4.png)
