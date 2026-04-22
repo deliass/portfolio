@@ -20,7 +20,7 @@ Voici les photos que j'ai prises :
 
 <div class="photos">
 
-![Photo dans Perpignan](/images/projects/photos-perso/perpi1.png)
+![Photo dans Perpignan](../assets/projects/photos-perso/perpi1.png)
 ![Photo dans Perpignan](../../images/projects/photos-perso/perpi2.png)
 ![Photo dans Perpignan](../../images/projects/photos-perso/perpi3.png)
 ![Photo de fleurs à Perpignan](../../images/projects/photos-perso/perpi4.png)
