@@ -1,10 +1,12 @@
 ---
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import Default from "../layout/default.astro";
+import BaseLayout from "../layout/default.astro";
 import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
+import Contact from "../components/Contact.astro";
 ---
 
-<Default pageTitle="Inspirations">
+<BaseLayout pageTitle="Inspirations">
   <Breadcrumbs
     items={[{ href: "/", label: "Accueil" }]}
     current="Inspirations"
@@ -16,21 +18,175 @@ import { Image } from "astro:assets";
     </div>
     <p>Bienvenue dans ma tête, aussi appelée ma banque à inspi.</p>
   </section>
-  <div class="inspi__inner">
-    <div class="speakers">
-      <h3>Personnalités & Speakers</h3>
+  <section class="project">
+    <div class="project__inner">
+      <h2>Mes projets</h2>
       <p>
-        Professionnels, amateurs ou artistes, j’aime ouvrir ma veille à tous les
-        horizons pour en apprendre toujours, même à petite échelle.
+        Mes projets se basent sur mes sources, alors si vous voulez découvrir
+        comment je passe de l’inspiration au concret, n’hésitez pas à aller voir
+        mes projets.
+      </p>
+      <div class="project__assets">
+        <Button title="Découvrir mes projets" href="/projets/" />
+        <img src="/assets/icons/welcome.svg" alt="" width="78" height="68" />
+      </div>
+    </div>
+  </section>
+  <section class="process">
+    <img src="/assets/icons/arrow-down.svg" alt="" />
+    <div class="process__content">
+      <h2>Comment je procède</h2>
+      <p>
+        J’essaye de cultiver ma veille quotidiennement, afin de toujours avoir
+        un regard actuel et éveillé sur un projet. Pour cela, je me tiens
+        informée grâce à mon flux RSS. Ensuite, selon le type ou le thème du
+        projet, je me dirige vers plusieurs de mes sources.
       </p>
     </div>
+  </section>
+  <section class="case">
     <div class="design">
-      <h3>Typographies & Design</h3>
+      <h3>Webdesign et graphisme</h3>
       <p>
-        J’aime les belles choses, mais surtout les belles choses qui font du
-        sens. Je suis très sensible au travail de la typographie, et à la
-        manière dont elle peut faire passer un message.
+        Ici, je regarde d’abord des sites (d’offres) similaires, puis je vais
+        faire ma vieille d’interface sur les sites les plus connus : Awwwards,
+        Behance, Pinterest, Dribbble. Je prends également en compte les
+        actualités via mon flux. Après cela, je vais dresser un inspiration
+        board (où je mets des éléments que je veux retrouver sur mon site, des
+        composants, des effets, des fonctionnalités) et un moodboard (où je
+        regroupe des choix de design brut, comme de la typo, des éléments
+        graphiques, de la texture, de la couleur ou du style).
       </p>
     </div>
-  </div>
-</Default>
+    <div class="ux-project">
+      <h3>Projet UX</h3>
+      <p>
+        Je me réfère d’abord au sujet et réalise un benchmark et un audit du
+        service ou du produit à améliorer. Je vais ensuite créer des proto
+        persona, imaginer leurs profils et leurs cartes d’expérience et
+        d’empathie. Grâce à ça, je vais pouvoir dresser un formulaire que je
+        vais partager aux gens que je cible, pour avoir du contenu quantitatif,
+        puis, si possible, une étude qualitative pour proposer une solution
+        aboutie.
+      </p>
+    </div>
+    <div class="photo-video">
+      <h3>Photo & vidéo</h3>
+      <p>
+        Selon l’intention, je vais regarder ce qui se fait dans le sujet, puis
+        je vais créer une note d’intention. Dedans, j’y mets mes recherches, mon
+        moodboard, le matériel que je utiliser, les sujets, le(s) décor(s) etc.
+        Tout ça, je le lie à un nuage de mot qui me permet de garder un fil
+        directeur.
+      </p>
+    </div>
+  </section>
+  <section class="people">
+    <h2>Les personnalités que je suis</h2>
+    <p>
+      En 2025, j’ai eu l’occasion d’assister au css-day, là-bas j’ai rencontré
+      et discuté avec énormément de têtes (j’aime les appeler les final boss).
+      Cette convention m’a permis d’avoir un regard nouveau sur notre manière
+      d’utiliser le CSS dans le confort cognitif et l’accessibilité.
+    </p>
+    <ul>
+      <li><a href="https://nerdy.dev/">Adam Argyle</a></li>
+      <li><a href="https://www.miriamsuzanne.com/">Miriam Suzanne</a></li>
+      <li><a href="https://cydstumpel.nl/">Cyd Stumpel</a></li>
+      <li><a href="https://ishadeed.com/">Ahmad Shadeed</a></li>
+      <li><a href="https://adactio.com/">Jeremy Keith</a></li>
+      <li><a href="https://heydonworks.com/">Heydon Pickering</a></li>
+    </ul>
+    <p>
+      Ces gens sont mes principales références en terme de veille continue.
+      C’est à dire que je suis leurs actualités, mais ce n’est pas forcément
+      vers eux que je me tourne dès que je cherche une info en particulier, ou
+      un tuto.
+    </p>
+  </section>
+  <Contact />
+</BaseLayout>
+
+<style>
+  .project {
+    width: 100%;
+    background: var(--secondary);
+  }
+
+  .project__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    padding: var(--space-l-xl);
+  }
+
+  .project__assets {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    gap: var(--space-m);
+  }
+
+  .process {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-m);
+  }
+
+  .process__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  .case {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-m);
+  }
+
+  .design,
+  .ux-project,
+  .photo-video {
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    border-left: 4px solid var(--title);
+    padding: var(--space-s);
+    height: fit-content;
+  }
+
+  .people {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  .people a {
+    color: var(--text-primary);
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 480px) {
+    * img {
+      display: none;
+    }
+
+    main {
+      margin-top: 0;
+    }
+
+    .project__inner {
+      flex-wrap: wrap;
+    }
+
+    .case {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>

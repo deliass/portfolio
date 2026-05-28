@@ -1,0 +1,78 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<section class="cv">
+  <div class="cv__inner">
+    <h2>Mes projets</h2>
+    <p>
+      Mes projets se basent sur mes sources, alors si vous voulez découvrir
+      comment je passe de l’inspiration au concret, n’hésitez pas à aller voir
+      mes projets.
+    </p>
+
+    <div class="cv__assets">
+      <Button title="Voir mes projets" href="/projets/" />
+      >
+      <img
+        src="/assets/icons/cv.svg"
+        alt=""
+        aria-hidden="true"
+        class="cv__deco"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  h2 {
+    color: var(--title);
+    font-family: "ABC Favorit Mono Edu";
+    font-size: var(--step-4);
+    margin: 0;
+  }
+
+  p {
+    color: var(--text-primary);
+    font-family: "Fibra One";
+    font-size: var(--step-0);
+    margin: 0;
+  }
+
+  .cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: var(--secondary);
+  }
+
+  .cv__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-s);
+    padding: var(--space-m-l);
+    box-sizing: border-box;
+  }
+
+  .cv__assets {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    flex-wrap: wrap;
+  }
+
+  .cv__deco {
+    max-width: 78px;
+    height: auto;
+  }
+
+  @media (max-width: 480px) {
+    .cv__deco {
+      display: none;
+    }
+  }
+</style>
