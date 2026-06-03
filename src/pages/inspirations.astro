@@ -84,19 +84,81 @@ import Contact from "../components/Contact.astro";
   <section class="people">
     <h2>Les personnalités que je suis</h2>
     <p>
-      En 2025, j’ai eu l’occasion d’assister au css-day, là-bas j’ai rencontré
-      et discuté avec énormément de têtes (j’aime les appeler les final boss).
-      Cette convention m’a permis d’avoir un regard nouveau sur notre manière
-      d’utiliser le CSS dans le confort cognitif et l’accessibilité.
+      En 2025, j’ai eu l’occasion d’assister au <a
+        href="https://cssday.nl/attendees.html">css-day</a
+      >, là-bas j’ai rencontré et discuté avec énormément de têtes (j’aime les
+      appeler les "final bosses"). Cette convention m’a permis d’avoir un regard
+      nouveau sur notre manière d’utiliser le CSS dans le confort cognitif et
+      l’accessibilité.
     </p>
-    <ul>
-      <li><a href="https://nerdy.dev/">Adam Argyle</a></li>
-      <li><a href="https://www.miriamsuzanne.com/">Miriam Suzanne</a></li>
-      <li><a href="https://cydstumpel.nl/">Cyd Stumpel</a></li>
-      <li><a href="https://ishadeed.com/">Ahmad Shadeed</a></li>
-      <li><a href="https://adactio.com/">Jeremy Keith</a></li>
-      <li><a href="https://heydonworks.com/">Heydon Pickering</a></li>
-    </ul>
+    <div class="avatars">
+      <div class="miriam">
+        <a href="https://www.miriamsuzanne.com/">
+          <img
+            src="/assets/images/miriam.svg"
+            alt="Miriam Suzanne"
+            width="300"
+            height="360"
+          />
+          <p>Miriam Suzanne</p>
+        </a>
+      </div>
+      <div class="adam">
+        <a href="https://nerdy.dev/">
+          <img
+            src="/assets/images/adam.svg"
+            alt="Adam Argyle"
+            width="300"
+            height="360"
+          />
+          <p>Adam Argyle</p>
+        </a>
+      </div>
+      <div class="ahmad">
+        <a href="https://ishadeed.com/">
+          <img
+            src="/assets/images/ahmad.svg"
+            alt="Ahmad Shadeed"
+            width="300"
+            height="360"
+          />
+          <p>Ahmad Shadeed</p>
+        </a>
+      </div>
+      <div class="jeremy">
+        <a href="https://adactio.com/">
+          <img
+            src="/assets/images/jeremy.svg"
+            alt="Jeremy Keith"
+            width="300"
+            height="360"
+          />
+          <p>Jeremy Keith</p>
+        </a>
+      </div>
+      <div class="heydon">
+        <a href="https://heydonworks.com/">
+          <img
+            src="/assets/images/heydon.svg"
+            alt="Heydon Pickering"
+            width="300"
+            height="360"
+          />
+          <p>Heydon Pickering</p>
+        </a>
+      </div>
+      <div class="cyd">
+        <a href="https://cydstumpel.nl/">
+          <img
+            src="/assets/images/cyd.svg"
+            alt="Cyd Stumpel"
+            width="300"
+            height="360"
+          />
+          <p>Cyd Stumpel</p>
+        </a>
+      </div>
+    </div>
     <p>
       Ces gens sont mes principales références en terme de veille continue.
       C’est à dire que je suis leurs actualités, mais ce n’est pas forcément
@@ -105,88 +167,113 @@ import Contact from "../components/Contact.astro";
     </p>
   </section>
   <Contact />
-</BaseLayout>
 
-<style>
-  .project {
-    width: 100%;
-    background: var(--secondary);
-  }
-
-  .project__inner {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-    padding: var(--space-l-xl);
-  }
-
-  .project__assets {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-    gap: var(--space-m);
-  }
-
-  .process {
-    display: flex;
-    flex-direction: row;
-    gap: var(--space-m);
-  }
-
-  .process__content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-  }
-
-  .case {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-m);
-  }
-
-  .design,
-  .ux-project,
-  .photo-video {
-    background-color: var(--secondary);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-    border-left: 4px solid var(--title);
-    padding: var(--space-s);
-    height: fit-content;
-  }
-
-  .people {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-  }
-
-  .people a {
-    color: var(--text-primary);
-    text-decoration: underline;
-  }
-
-  @media screen and (max-width: 480px) {
-    * img {
-      display: none;
-    }
-
-    main {
-      margin-top: 0;
+  <style>
+    .project {
+      width: 100%;
+      background: var(--secondary);
     }
 
     .project__inner {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
+      padding: var(--space-l-xl);
+    }
+
+    .project__assets {
+      display: flex;
       flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+      gap: var(--space-m);
+    }
+
+    .process {
+      display: flex;
+      flex-direction: row;
+      gap: var(--space-m);
+    }
+
+    .process__content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
     }
 
     .case {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-m);
+    }
+
+    .design,
+    .ux-project,
+    .photo-video {
+      background-color: var(--secondary);
       display: flex;
       flex-direction: column;
+      gap: var(--space-m);
+      border-left: 4px solid var(--title);
+      padding: var(--space-s);
+      height: fit-content;
     }
-  }
-</style>
+
+    .people {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-m);
+    }
+
+    .people a {
+      color: var(--text-primary);
+      text-decoration: underline;
+    }
+
+    .avatars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-m);
+    }
+
+    .adam,
+    .ahmad,
+    .jeremy,
+    .heydon,
+    .cyd,
+    .miriam {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-s);
+      align-items: center;
+      padding-bottom: var(--space-l);
+      box-shadow: 0px 8px 8px var(--secondary);
+      text-align: center;
+    }
+
+    .avatars img {
+      border-radius: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+      * img {
+        display: none;
+      }
+
+      main {
+        margin-top: 0;
+      }
+
+      .project__inner {
+        flex-wrap: wrap;
+      }
+
+      .case {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+</BaseLayout>
