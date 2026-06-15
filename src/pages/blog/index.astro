@@ -1,0 +1,209 @@
+---
+import BaseLayout from "../../layout/default.astro";
+import Contact from "../../components/Contact.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PostCard from "../../components/PostCard.astro";
+
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<BaseLayout pageTitle="Blog">
+  <Breadcrumbs items={[{ href: "/", label: "Accueil" }]} current="Blog" />
+  <div class="hero">
+    <div class="title">
+      <h1>Quelques articles</h1>
+      <img src="/assets/icons/project-h.svg" alt="" />
+    </div>
+    <div>
+      <p>Je partage quelques pensées, avis et conseils/tutos.</p>
+    </div>
+  </div>
+  <section class="blog">
+    <div class="categories">
+      <div class="category-filter">
+        <h2>Catégories</h2>
+
+        <ul class="filter-list">
+          <li>
+            <button class="filter-btn active" data-filter="all">Tout</button>
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="music">Musique</button>
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="design">Design</button>
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="techniques"
+              >Techniques</button
+            >
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="figma">Figma</button>
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="cms">CMS</button>
+          </li>
+          <li>
+            <button class="filter-btn" data-filter="bla-bla">Bla-bla</button>
+          </li>
+        </ul>
+      </div>
+      <img src="/assets/icons/categories.svg" alt="" width="134" height="135" />
+    </div>
+    <div class="gallery">
+      {
+        posts.map((post) => (
+          <PostCard
+            title={post.data.title}
+            year={post.data.year ? post.data.year : ""}
+            type={post.data.type}
+            category={post.data.category}
+            filterType={post.data.filterType}
+            alt=""
+            href={`/blog/${post.id}`}
+            buttonLabel="Lire l'article"
+          />
+        ))
+      }
+    </div>
+  </section>
+  <Contact />
+</BaseLayout>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  const cards = document.querySelectorAll<HTMLElement>(".post-card");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      cards.forEach((card) => {
+        const cardType = card.dataset.type;
+
+        if (filter === "all" || cardType === filter) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .categories ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    list-style-type: none;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: sticky;
+    height: fit-content;
+    top: 150px;
+  }
+
+  .category-filter {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    gap: var(--space-m-l);
+    padding: var(--space-s-m);
+  }
+
+  .filter-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .filter-btn.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .blog {
+    display: grid;
+    grid-template-columns: 324px 1fr;
+    gap: 50px;
+    box-sizing: border-box;
+    align-items: start;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-m);
+    align-items: start;
+  }
+
+  .gallery a {
+    display: block;
+  }
+
+  @media (max-width: 480px) {
+    .projects {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding: 0 10px;
+      gap: var(--space-s);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .categories {
+      background-color: var(--primary);
+      position: static;
+      padding: 0;
+      gap: 16px;
+    }
+
+    .categories ul {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .category-filter {
+      background-color: var(--primary);
+      padding: 0;
+    }
+
+    .category-filter h2 {
+      display: none;
+    }
+
+    .filter-btn {
+      background-color: var(--secondary);
+      border-radius: 999px;
+      padding: var(--space-2xs);
+      text-decoration: none;
+    }
+
+    .filter-btn.active {
+      background-color: var(--text-primary);
+      color: var(--secondary);
+      text-decoration: none;
+    }
+  }
+</style>

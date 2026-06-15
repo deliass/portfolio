@@ -1,0 +1,100 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+  title: string;
+  year: string;
+  type: string;
+  category: string;
+  alt?: string;
+  href?: string;
+  buttonLabel?: string;
+  filterType: string;
+}
+
+const {
+  title,
+  year,
+  type,
+  category,
+  alt = "Aperçu du post",
+  href = "#",
+  buttonLabel = "Lire",
+  filterType,
+} = Astro.props;
+---
+
+<div class="post-card" data-type={filterType}>
+  <div class="post-card__content">
+    <h3 class="post-card__title">{title}</h3>
+    <p class="post-card__meta">{type} • {category}</p>
+    <p class="post-card__year">{year}</p>
+    <Button title={buttonLabel} href={href} />
+  </div>
+</div>
+
+<style>
+  button {
+    cursor: pointer;
+    display: flex;
+    padding: 6px 15px;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 3px;
+    border: 1.5px solid var(--title);
+    background-color: var(--secondary);
+    color: var(--title);
+    font-family: "Fibra One";
+    font-size: var(--step-0);
+    list-style: none;
+    text-decoration: none;
+  }
+
+  button:hover {
+    border: dashed 1.5px var(--text-primary);
+  }
+
+  .post-card {
+    background: var(--secondary);
+    border-radius: 5px;
+    padding: clamp(0.75rem, 2vw, 1.25rem);
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--title);
+    font-family: "Fibra One";
+  }
+
+  .post-card__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    display: block;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: clamp(0.5rem, 1.5vw, 0.875rem);
+  }
+
+  .post-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .post-card__meta {
+    margin: 0;
+    font-size: var(--step-0);
+    color: var(--text-primary);
+  }
+
+  .post-card__year {
+    margin: 0;
+    font-size: var(--step--1);
+    font-weight: bold;
+    color: var(--text-primary);
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>

@@ -17,4 +17,4 @@ Je fais mon alternance avec un double contrat. Je suis à la fois webdesigner et
 
 ## Compétences
 
-Je crée les visuels sur Canva, et fais ma veille sur Pinterest ou Instagram. Notre principal outil de travail est Monday. Je réalise aussi, parfois, des benchmarks pour permettre à Charlotte de se positionner par rapport à ses concurrents. J'ai eu l'opportunité de suivre une formation en e-learning sur la stratégie à adopter sur LinkedIn, mais aussi eu l'occasion de suivre des webinaires sur des sujets liés à son activité, comme un webinaire sur la nouvelle réforme de la facturation électronique.
+Je crée les visuels sur Canva, et fais ma veille sur Pinterest ou Instagram. Notre principal outil de travail est Notion. Je réalise aussi, parfois, des benchmarks pour permettre à Charlotte de se positionner par rapport à ses concurrents. J'ai eu l'opportunité de suivre une formation en e-learning sur la stratégie à adopter sur LinkedIn, mais aussi eu l'occasion de suivre des webinaires sur des sujets liés à son activité, comme un webinaire sur la nouvelle réforme de la facturation électronique.

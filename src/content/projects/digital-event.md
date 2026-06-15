@@ -18,7 +18,7 @@ cinéma. Je ne peux pas dire que je suis une cinéphile, certes, mais je
 ne peux que conseiller de regarder [Midsommar](<https://fr.wikipedia.org/wiki/Midsommar_(film)>) !
 
 Ce film est, à mes yeux, un chef d’œuvre artistique, une nouvelle manière
-d’aborder l’horreur, dans des couleurs plus gaies, en plein jour, avec des
+d'aborder l’horreur, dans des couleurs plus gaies, en plein jour, avec des
 personnes qui ont l’air si attachante, avec une atmosphère si détendue...
 Alors, il était pour moi évident de photographier sur ce film, et surtout,
 sur ma scène préférée.

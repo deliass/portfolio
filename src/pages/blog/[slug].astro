@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layout/default.astro";
+import { getCollection, render } from "astro:content";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+
+export async function getStaticPaths() {
+  const blog = await getCollection("blog");
+  return blog.map((blog) => ({
+    params: { slug: blog.data.slug },
+    props: { blog },
+  }));
+}
+
+const { blog } = Astro.props;
+const { Content } = await render(blog);
+---
+
+<BaseLayout pageTitle={blog.data.title}>
+  <main class="blog-page">
+    <section class="blog-intro">
+      <Breadcrumbs
+        items={[
+          { href: "/", label: "Accueil" },
+          { href: "/blog", label: "Blog" },
+        ]}
+        current={blog.data.title}
+      />
+      <h1>{blog.data.title}</h1>
+      {
+        blog.data.description && (
+          <p>
+            {blog.data.description}{" "}
+            <a href={blog.data.externalLink}>{blog.data.externalText}</a>
+          </p>
+        )
+      }
+    </section>
+    <article class="blog-markdown">
+      <Content />
+    </article>
+  </main>
+</BaseLayout>
