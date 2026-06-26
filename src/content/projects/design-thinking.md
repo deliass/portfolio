@@ -6,7 +6,7 @@ category: UX
 filterType: ux
 image: /assets/thumbnails/culture-ux.png
 description: "Mon initiation au Design Thinking, aka ma méthodologie UX favorite ! Cours donné par Mathieu Estivil."
-externalLink: https://www.linkedin.com/in/mathieuestivill/
+externalLink: https://www.thalesaleniaspace.com/fr
 externalText: Visiter son LinkedIn
 year: "2025"
 ---

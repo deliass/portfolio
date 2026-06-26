@@ -27,6 +27,17 @@
 		align-self: flex-end;
 	}
 
+	.note {
+	background-color: var(--secondary);
+	width: 100%;
+	padding: var(--space-m);
+	border-left: 5px solid var(--title);
+}
+
+.note a , .note p {
+	color: var(--text-primary);
+}
+
 	h1 {
 		color: var(--title);
 		font-family: "monotalic";

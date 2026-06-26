@@ -1,15 +1,12 @@
 /*@import "../../src/style/style.css";*/
 
-section {
-	padding: 0;
-}
 
 .project-page {
 		display: flex;
 		max-width: 1200px;
 		flex-direction: column;
 		gap: var(--space-2xl);
-		margin-top: 150px;
+		margin-top: 100px;
 }
 
 .project-markdown {
@@ -37,7 +34,7 @@ li, a {
 
 .project-intro__image {
 	align-self: center;
-	width: 50%;
+	width: 100%;
 }
 
 .productions__inner {
