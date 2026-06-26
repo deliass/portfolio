@@ -7,7 +7,7 @@ filterType: ux
 image: /assets/projects/thales/Proposition-1.png
 description: "Refonte UI UX d'un site de vente de satellite pour"
 externalLink: https://www.linkedin.com/in/mathieuestivill/
-externalText: Thales Alenia space
+externalText: Thales Alenia space.
 year: "2026"
 ---
 

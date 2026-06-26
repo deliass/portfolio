@@ -15,7 +15,8 @@ import Contact from "../components/Contact.astro";
     />
     <div class="hero">
       <h1>Salut, moi c’est Nélia&nbsp;!</h1>
-      <h3>Je conçois des interfaces claires, accessibles et sobres.</h3>
+      <h2>Je conçois des interfaces web accessibles et sobres.</h2>
+      <p>Apprentie UI/UX en quête d'une alternance</p>
     </div>
     <img
       class="bottom"
@@ -73,7 +74,7 @@ import Contact from "../components/Contact.astro";
         </p>
       </div>
     </div>
-    <Button title="Voir mes inspirations" href="/wip/" />
+    <Button title="Voir mes inspirations" href="/inspirations/" />
   </section>
   <Contact />
 </BaseLayout>
@@ -82,6 +83,11 @@ import Contact from "../components/Contact.astro";
   .hero-all {
     display: flex;
     flex-direction: column;
+  }
+
+  .hero p {
+    font-weight: bold;
+    color: var(--title);
   }
 
   .bottom {
