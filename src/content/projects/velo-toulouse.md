@@ -4,7 +4,7 @@ slug: "velo-toulouse"
 type: Scolaire
 category: UX
 filterType: ux
-image: /public/assets/projects/francois.png
+image: /assets/projects/francois.png
 description: "Projet fictif de recommandations UX pour l'application VélÔToulouse."
 year: "2026"
 ---

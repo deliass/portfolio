@@ -4,7 +4,7 @@ slug: "portfolio"
 type: Perso
 category: Développement web
 filterType: developpement
-image: /public/assets/projects/portfolio.png
+image: /assets/projects/portfolio.png
 description: "Site designé et développé pour ma recherche d'alternance."
 year: "2026"
 ---

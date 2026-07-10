@@ -4,7 +4,7 @@ slug: "passerelle-surdicecite"
 type: Pro
 category: Développement web
 filterType: developpement
-image: /public/assets/projects/passerelle.png
+image: /assets/projects/passerelle.png
 description: "Surdicécité : double déficience sensorielle combinant, à des degrés divers, une déficience auditive et visuelle, sans que l’une ne compense l’autre. Elle impacte la communication, les déplacements et l’accès à l’information. C’est un handicap unique reconnu depuis 2021."
 year: "2026"
 ---
