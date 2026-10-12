@@ -2,7 +2,6 @@
 import BaseLayout from "../../layout/default.astro";
 import { getCollection, render } from "astro:content";
 import "../../style/project-content.css";
-import Button from "../../components/Button.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 
 export async function getStaticPaths() {
@@ -43,7 +42,13 @@ const { Content } = await render(project);
         project.data.description && (
           <p>
             {project.data.description}{" "}
-            <a href={project.data.externalLink}>{project.data.externalText}</a>
+            <a
+              href={project.data.externalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.data.externalText}
+            </a>
           </p>
         )
       }
